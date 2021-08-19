@@ -1,0 +1,64 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+  //ソースとコマンドの行き来
+  {
+    "key": "ctrl+o ctrl+o",
+    "command":"workbench.action.terminal.focus",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+o ctrl+o",
+    "command":"workbench.action.focusFirstEditorGroup",
+    "when": "terminalFocus"
+  },
+  //絶対パスはる
+  {
+    "key": "ctrl+shift+c",
+    "command": "copyRelativeFilePath",
+    "when": "terminalFocus"
+  },
+  //エディターを縦に分割する
+  {
+    "key": "alt+f2",
+    "command": "workbench.action.splitEditor"
+  },
+  //エディターを横に分割する
+  {
+    "key": "alt+f3",
+    "command": "workbench.action.splitEditorOrthogonal"
+  },
+  //エディターを統合する
+  {
+    "key": "shift+alt+f1",
+    "command": "workbench.action.joinAllGroups"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "-workbench.action.splitEditor"
+  },
+  {
+    "key": "alt+f3",
+    "command": "-editor.action.dirtydiff.next",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+/",
+    "command": "-workbench.action.splitEditorOrthogonal"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFile"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "-workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+]

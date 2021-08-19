@@ -1,0 +1,72 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=$HOME\vimfiles\.vim\bundle\Vundle.vim
+
+"call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+call vundle#begin('$HOME\vimfiles\.vim\bundle')
+
+Plugin 'VundleVim/Vundle.vim'
+
+"プラグイン置き場-------------------------------------------------------
+"GitHub にプラグインがある場合
+"Plugin 'tpope/vim-fugitive'
+"http://vim-scripts.org/vim/scripts.html にプラグインがある場合
+" Plugin 'L9'
+"GitHub でホストされていない場合
+"Plugin 'git://git.wincent.com/command-t.git'
+"-----------------------------------------------------------------------
+Plugin 'scrooloose/nerdtree' "ディレクトリを見やすくするやつ
+Plugin 'vim-jp/vimdoc-ja' "ヘルプを日本語化する
+Plugin 'pacificbelt30/easyCO.vim' "コメントアウト簡易化
+Plugin 'cohama/lexima.vim' "括弧の補完
+Plugin 'vim-airline/vim-airline' "vim-airline
+Plugin 'vim-airline/vim-airline-themes' "それらのテーマ
+Plugin 'bronson/vim-trailing-whitespace' "空白を緋くする
+
+
+Plugin 'Shougo/deoplete.nvim' "自動補完プラグイン
+Plugin 'roxma/nvim-yarp' "自動補完プラグイン
+Plugin 'roxma/vim-hug-neovim-rpc' "自動補完プラグイン
+Plugin 'deoplete-plugins/deoplete-jedi' "python補完プラグイン
+Plugin 'Shougo/neco-vim' "vimscript補完プラグイン
+Plugin 'Shougo/deoplete-clangx' "c,c++補完
+
+"シンタックス
+Plugin 'hdima/python-syntax' "パイソンのシンタックスハイライト"
+
+"カラースキーム
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'wadackel/vim-dogrun'
+Plugin 'cocopon/iceberg.vim'
+Plugin 'morhetz/gruvbox'
+Plugin  'w0ng/vim-hybrid'
+Plugin 'tomasr/molokai'
+"プラグインの設定-------------------------------------------------------
+nnoremap  <Space>e :NERDTreeToggle<CR>
+
+"deoplete
+let g:python3_host_prog = '$HOME/AppData/Local/Programs/Python/Python39/python.exe'
+let g:deoplete#enable_at_startup = 1
+
+"help
+set helplang=ja,en
+
+
+"設定ここまで-------------------------------------------------
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line

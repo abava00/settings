@@ -1,0 +1,250 @@
+{
+	// Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+  // }
+
+    "start":{
+      "prefix": "start",
+      "body": [
+          "\\documentclass[twocolumn]{jsarticle}",
+          "\\title{タイトル入力欄}",
+          "\\author{B21P036 平間海渡}",
+          "\\usepackage{colortbl}",
+          "% ヘッダの読込",
+          "\\pagestyle{myheadings}",
+          "%ヘッダの中身",
+          "\\markright{\\textcolor[gray]{0.7}{題名 \\hspace{20zw} B21P036 平間海渡}}",
+          "%余白の設定",
+          "\\usepackage[top=12.7truemm,bottom=12.7truemm,left=12.7truemm,right=12.7truemm]{geometry}",
+          "%段組み設定",
+          "\\usepackage{geometry}",
+          "%段の間隔",
+          "\\setlength{\\columnsep}{3zw}",
+          "%画像の設定",
+          "\\usepackage[dvipdfmx]{graphicx}",
+          "%写真の設定",
+          "\\usepackage[dvipdfmx]{graphicx}",
+          "%ソースを貼れるようになる設定",
+          "\\usepackage[]{listings}",
+          "%数式の設定 \\begin{align*}とか &= とか",
+          "\\usepackage{amsmath}",
+          "%ソースを枠で囲む",
+          "\\lstset{frame=trbl}",
+          "",
+          "\\begin{document}",
+          "\\end{document}",
+      ],
+    },
+
+
+    "start1":{
+      "prefix": "start1",
+      "body": [
+          "\\documentclass{jsarticle}",
+          "\\title{タイトル入力欄}",
+          "\\author{B21P036 平間海渡}",
+          "\\usepackage{colortbl}",
+          "% ヘッダの読込",
+          "\\pagestyle{myheadings}",
+          "%ヘッダの中身",
+          "\\markright{\\textcolor[gray]{0.7}{題名 \\hspace{20zw} B21P036 平間海渡}}",
+          "%余白の設定",
+          "\\usepackage[top=12.7truemm,bottom=12.7truemm,left=12.7truemm,right=12.7truemm]{geometry}",
+          "%画像の設定",
+          "\\usepackage[dvipdfmx]{graphicx}",
+          "%写真の設定",
+          "\\usepackage[dvipdfmx]{graphicx}",
+          "%ソースを貼れるようになる設定",
+          "\\usepackage[]{listings}",
+          "%数式の設定 \\begin{align*}とか &= とか",
+          "\\usepackage{amsmath}",
+          "%ソースを枠で囲む",
+          "\\lstset{frame=trbl}",
+          "",
+          "\\begin{document}",
+          "\\end{document}",
+      ],
+    },
+
+    "htbp":{
+      "prefix": "htbp",
+      "body": "htbp",
+      "description": [
+        "htbp",
+        "h： その部分（here)",
+        "t： ページの上（top)",
+        "b： ページの下（bottom)",
+        "p： 独立したペー)",
+      ],
+    },
+
+    "zw":{
+      "prefix": "zw",
+      "body": "zw",
+      "description": [
+        "現在有効な全角漢字の幅",
+      ],
+    },
+
+    "zh":{
+      "prefix": "zh",
+      "body": "zh",
+      "description": [
+        "現在有効な全角漢字の高さ",
+      ],
+    },
+
+    "hspase":{
+      "prefix": "hspase",
+      "body": "hspase{",
+    },
+
+    "vspase":{
+      "prefix": "vspase",
+      "body": "vspase{",
+    },
+
+    "picture":{
+      "prefix": "picture",
+      "body": [
+        "\\begin{figure}[htbp]",
+        " \\begin{center}",
+        "  \\fbox{",
+        "   \\includegraphics[width=15cm]{$1}",
+        "    }",
+        "  \\caption[]{$2}",
+        "  \\label{$3}",
+        " \\end{center}",
+        "\\end{figure}",
+      ],
+      "description": "写真を1枚貼る"
+    },
+
+    "pictures":{
+      "prefix": "pictures",
+      "body": [
+        "%3枚並べたいなら幅を0.5から0.33あたりに変更しよう",
+        "\\begin{figure}[htbp]",
+        " \\begin{minipage}{0.5\\hsize}",
+        "  \\begin{center}",
+        "    \\fbox{",
+        "   \\includegraphics[width=80mm]{$1}",
+        "    }",
+        "  \\end{center}",
+        "  \\caption[]{$2}",
+        "  \\label{$3}",
+        " \\end{minipage}",
+        "%複製時(ここから)",
+        " \\begin{minipage}{0.5\\hsize}",
+        " \\begin{center}",
+        "  \\fbox{",
+        "  \\includegraphics[width=80mm]{$4}",
+        "  }",
+        " \\end{center}",
+        "    \\caption[]{$5}",
+        "  \\label{}",
+        " \\end{minipage}",
+        "%複製時(ここまで)",
+        "\\end{figure}",
+      ],
+      "description": "画像を並べて貼る",
+    },
+
+    "table":{
+      "prefix": "table",
+      "body": [
+        "  \\begin{table}[htbp]",
+        "    \\begin{center}",
+        "    \\caption[]{}",
+        "      \\begin{tabular}{|c||c|c|}\\hline",
+        "        1 & 2 & 3 \\\\\\ \\hline \\hline",
+        "        1 & 2 & 3 \\\\\\ \\hline",
+        "        1 & 2 & 3 \\\\\\ \\hline",
+        "      \\end{tabular}",
+        "    \\label{}",
+        "    \\end{center}",
+        "  \\end{table}",
+      ],
+      "description": "表を作る",
+    },
+
+
+    "bullet_dot":{
+      "prefix": "bullet_dot",
+      "body": [
+        "\\begin{itemize}",
+        "  \\item ${ITEM1}\\mbox{}\\\\\\",
+        "\\end{itemize}",
+      ],
+    },
+
+    "bullet_title":{
+      "prefix": "bullet_title",
+      "body": [
+        "\\begin{description}",
+        "  \\item[${1:TITLE1}] \\mbox{}\\\\\\ ${2:ITEM1}",
+        "\\end{description}",
+      ],
+    },
+
+    "bullet_num":{
+      "prefix": "bullet_num",
+      "body": [
+        "\\begin{enumerate}",
+        "  \\item ${ITEM1}\\mbox{}\\\\\\",
+        "\\end{enumerate}",
+      ],
+    },
+
+    "integral":{
+      "prefix": "seki",
+      "body": "\\int_{${1:下の値}}^{${2:上の値}}  ${3:中の値}\\,dx ${4}"
+    },
+
+    "sigma":{
+      "prefix": "siguma",
+      "body": "\\sum_{${1:はじめ}}^{${2:おわり}}  {${3:中の値}} ${4}",
+    },
+
+    "delta":{
+      "prefix": "bibun",
+      "body": "\\frac{d}{d${1:x}}{\\{${2:中の値}\\\\}}"
+    },
+
+    "limit":{
+      "prefix": "kyokugen",
+      "body": "\\lim_{${1:x} \\to ${2: 端っこ}} ${3:中の値}${4}"
+    },
+
+    "exp":{
+      "prefix": "ee",
+      "body": "^{${1}}${2}"
+    },
+
+    "log":{
+      "prefix": "log",
+      "body": "\\log_{${1}}{${2}}${3}",
+    },
+
+    "leq":{
+      "prefix": "ccc",
+      "body": "\\leq",
+    },
+
+    "geq":{
+      "prefix": "777",
+      "body": "\\geq",
+    },
+
+}
+

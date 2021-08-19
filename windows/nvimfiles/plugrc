@@ -1,0 +1,60 @@
+call plug#begin()
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+"プラグイン
+Plug 'Shougo/neco-vim' "vimscriptの自動補完プラグイン
+Plug 'deoplete-plugins/deoplete-jedi' "pythonの自動補完プラグイン
+Plug 'Shougo/neco-syntax' "syntaxからの自動補完プラグイン
+Plug 'scrooloose/nerdtree' "ディレクトリを見やすくするやつ
+Plug 'vim-jp/vimdoc-ja' "ヘルプを日本語化する
+Plug 'pacificbelt30/easyCO.vim' "コメントアウト簡易化 
+Plug 'cohama/lexima.vim' "括弧の補完
+Plug 'vim-airline/vim-airline' "vim-airline
+Plug 'vim-airline/vim-airline-themes' "それらのテーマ
+Plug 'kana/vim-smartchr' "イコールを入れると空白が入る
+Plug 'LeafCage/yankround.vim' "レジスタの履歴を取得する
+Plug 'Shougo/unite.vim'
+"カラースキーム
+Plug 'arcticicestudio/nord-vim'
+Plug 'wadackel/vim-dogrun'
+Plug 'cocopon/iceberg.vim' 
+call plug#end()
+
+"NoBundle 
+
+let g:python3_host_prog = "$HOME/AppData/Local/Programs/Python/Python39/Python"
+nnoremap  <Space>e :NERDTreeToggle<CR>
+
+"yank
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+xmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+nnoremap <silent><C-p> :Unite yankround<CR>
+
+"smartchr
+inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
+inoremap <buffer> <expr> < smartchr#loop(' < ', '<')
+inoremap <buffer> <expr> > smartchr#loop(' > ', '>')
+inoremap <buffer> <expr> !< smartchr#loop(' !< ', '!<')
+inoremap <buffer> <expr> !> smartchr#loop(' !> ', '!>')
+inoremap <buffer> <expr> != smartchr#loop(' != ', '!=')
+inoremap <buffer> <expr> <= smartchr#loop(' <= ', '<=')
+inoremap <buffer> <expr> >= smartchr#loop(' >= ', '>=')
+inoremap <buffer> <expr> + smartchr#loop(' + ', '+')
+inoremap <buffer> <expr> - smartchr#loop(' - ', '-')
+inoremap <buffer> <expr> / smartchr#loop(' / ', '/')
+inoremap <buffer> <expr> * smartchr#loop(' * ', '*')
+inoremap <buffer> <expr> , smartchr#loop(', ', ',')
+inoremap <buffer> <expr> . smartchr#loop('.', '<%=  %>', '<%  %>')
