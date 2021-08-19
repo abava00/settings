@@ -91,10 +91,7 @@
     "vim.autoSwitchInputMethod.defaultIM": "0",
     //ラップトップCP版
     // "vim.autoSwitchInputMethod.obtainIMCmd": "%HOMEPATH%\\AppData\\Roaming\\Code\\User\\zenhan\\bin64\\zenhan.exe 0",
-    // "vim.autoSwitchInputMethod.switchIMCmd": "%HOMEPATH%\\AppData\\Roaming\\Code\\User\\zenhan\\bin64\\zenhan.exe {im}",
-    //デスクトップPC版
-    "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\Users\\kaito\\AppData\\Roaming\\Code\\User\\zenhan\\bin64\\zenhan.exe 0",
-    "vim.autoSwitchInputMethod.switchIMCmd": "C:\\Users\\kaito\\AppData\\Roaming\\Code\\User\\zenhan\\bin64\\zenhan.exe {im}",
+    // "vim.autoSwitchInputMethod.switchIMCmd": "%HOMEPATH%\\AppData\\Roaming\\Code\\User\\zenhan\\bin64\\zenhan.exe {im}"
 
   /* Code Spell Checkerのユーザー単語登録情報 */
   "editor.suggestSelection": "first",
