@@ -28,27 +28,11 @@
   "files.trimTrailingWhitespace": true,
    // カーソル上にあるワードを"*"で検索(Vim)
   "vim.visualstar": true,
-"vim.useSystemClipboard": true,
+  "vim.useSystemClipboard": true,
 
-  //jjでインサートからコマンドモードへ移動(Vim)
-  "vim.insertModeKeyBindings": [{
-    "before": ["j","j"],
-    "after": ["<Esc>"],
-  }],
-
-
-  "vim.normalModeKeyBindings": [
-    {
-      "before":["j"],
-      "after":["g", "j"],
-    },
-    {
-      "before":["k"],
-      "after":["g", "k"],
-    },
-  ],
-
-
+    //vimrc読み込み
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "C:/Users/kaito/vsvimrc",
 
   //VScodeのテーマ
   "workbench.colorTheme": "Monokai Dimmed",
@@ -61,8 +45,8 @@
 
 //  "editor.renderControlCharacters": true, // 制御文字を表示する
 //   "editor.renderWhitespace": "boundary",  // 空白文字を表示する
- "editor.minimap.maxColumn": 40,         // ミニマップの幅を40文字分に設定する
- "files.autoGuessEncoding": true,       // 文字コードを自動的に判別する
+  "editor.minimap.maxColumn": 40,         // ミニマップの幅を40文字分に設定する
+  "files.autoGuessEncoding": true,       // 文字コードを自動的に判別する
 
   //エディターの文字配色
   "editor.tokenColorCustomizations": {

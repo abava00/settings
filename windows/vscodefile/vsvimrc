@@ -3,14 +3,17 @@ inoremap <silent>jj <ESC>
 "行の移動を改善
 nnoremap j gj
 noremap k gk
+"クリップボード
+set clipboard=unnamed
 "画面の移動
 nnoremap <Space>w <C-w><C-w>
 "全て選択する
 nnoremap <Space>a ggVG
-"バッファ入れ替え
 nnoremap <Space>bb :b
 "バッファ削除
 nnoremap <Space>bd :bd!<CR>
+" 括弧入力時の対応する括弧を協調表示
+set showmatch
 "バッファ移動
 nnoremap <silent><A-j> :bn<CR>
 nnoremap <silent><A-k> :bp<CR>
