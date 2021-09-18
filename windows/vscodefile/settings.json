@@ -32,7 +32,7 @@
 
     //vimrc読み込み
     "vim.vimrc.enable": true,
-    "vim.vimrc.path": "C:/Users/kaito/vsvimrc",
+    "vim.vimrc.path": "%USERPROFILE%\vsvimrc",
 
   //VScodeのテーマ
   "workbench.colorTheme": "Monokai Dimmed",
