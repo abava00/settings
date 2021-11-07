@@ -48,10 +48,6 @@ nnoremap <Space>bd :bd!<CR>
 "バッファ移動
 nnoremap <silent><A-j> :bn<CR>
 nnoremap <silent><A-k> :bp<CR>
-inoremap <silent><A-j> <ESC>:bn<CR>i
-inoremap <silent><A-k> <ESC>:bp<CR>i
-"inoremap ê <C-\><C-n>:bn<CR>i
-"inoremap ë <C-\><C-n>:bn<CR>i
 "vimrc の再起動
 nnoremap <Space>, :source $MYVIMRC<CR>
 "別バッファにターミナルを起動
@@ -60,36 +56,6 @@ nnoremap <Space>bt :ene<CR>:terminal Powershell<CR><C-w><C-w>:q<CR><C-\><C-n>:bp
 tnoremap <ESC> <C-\><C-n>
 tnoremap <C-[> <C-\><C-n>
 tnoremap <silent>jj <C-\><C-n>
-tnoremap ê <C-\><C-n>:bn<CR>i
-tnoremap ë <C-\><C-n>:bn<CR>i
-"単語関係の処理
-cnoremap <Space>d diw
-nnoremap <Space>c ciw
-nnoremap <Space>y yiw
-nnoremap <Space>v yiw
-"shift押すの面倒なの
-nnoremap ci2 ci"
-nnoremap di2 di"
-nnoremap yi2 yi"
-nnoremap ci7 ci'
-nnoremap di7 di'
-nnoremap yi7 yi'
-nnoremap ci8 ci(
-nnoremap di8 di(
-nnoremap yi8 yi(
-nnoremap ci9 ci)
-nnoremap di9 di)
-nnoremap yi9 yi)
-"サラウンド.vim のコマンドが覚えられないので
-nnoremap s <Nop>
-nnoremap s" viw<ESC>bi"<ESC>ea"<ESC>
-nnoremap s2 viw<ESC>bi"<ESC>ea"<ESC>
-nnoremap s' viw<ESC>bi'<ESC>ea'<ESC>
-nnoremap s7 viw<ESC>bi'<ESC>ea'<ESC>
-nnoremap s( viw<ESC>bi(<ESC>ea)<ESC>
-nnoremap s8 viw<ESC>bi(<ESC>ea)<ESC>
-nnoremap s) viw<ESC>bi(<ESC>ea)<ESC>
-nnoremap s9 viw<ESC>bi(<ESC>ea)<ESC>
 
 "見た目系
 " 行番号を表示
@@ -114,7 +80,7 @@ set showmatch
 set laststatus=2
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
-noremap k gk
+nnoremap k gk
 " シンタックスハイライトの有効化
 syntax enable
 "￥を/に自動へんかんする
@@ -129,10 +95,10 @@ for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
   exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
 endfor
 "ターミナルを起動させる(Powershell) 横
-noremap <Space>t  :bo terminal! ++rows=15 ++close Powershell<CR>
+nnoremap <Space>t  :bo terminal! ++rows=15 ++close Powershell<CR>
 "ターミナルを起動させる<(Powershell)縦
-noremap <Space>r  :vertical botright terminal! ++close Powershell<CR>
-" Tab系
+nnoremap <Space>r  :vertical botright terminal! ++close Powershell<CR>
+ "Tab系
 " 不可視文字を可視化(タブが「?-」と表示される)
 set list listchars=tab:\?\-
 " Tab文字を半角スペースにする
@@ -257,17 +223,8 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 
-"フォントの設定
-set guifont=Cica:h15
-set guifontwide=Cica:h15
 
-"テーマ
-"colorscheme hybrid
-"colorscheme dogrun
-colorscheme koehler
-
-"ファイルタイプに基づいたインデントを有効化(試験的導入 どう動くんだろう)
-filetype plugin indent on
+"ファイルタイプに基づいたインデントを有効化(試験的導入 どう動くんだろう) filetype plugin indent on
 "永続undo有効化,ファイルごとにundodirを生成する(試験的導入)
 set undofile
 if !isdirectory(expand("$HOME\\vimfiles\\undodir"))

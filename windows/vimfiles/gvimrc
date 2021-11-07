@@ -5,3 +5,5 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set guioptions-=b
+
+"set guifont=Cascadia\ Code\ PL:h14
