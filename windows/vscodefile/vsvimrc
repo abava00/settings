@@ -10,13 +10,6 @@ nnoremap <Space>w <C-w><C-w>
 "全て選択する
 nnoremap <Space>a ggVG
 nnoremap <Space>bb :b
-"バッファ削除
-nnoremap <Space>bd :bd!<CR>
-" 括弧入力時の対応する括弧を協調表示
-set showmatch
-"バッファ移動
-nnoremap <silent><A-j> :bn<CR>
-nnoremap <silent><A-k> :bp<CR>
 "単語関係の処理
 cnoremap <Space>d diw
 nnoremap <Space>c ciw
