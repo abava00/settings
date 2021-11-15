@@ -40,6 +40,8 @@
           "\\usepackage{amsmath}",
           "%ソースを枠で囲む",
           "\\lstset{frame=trbl}",
+          "%自前コマンド",
+          "%\\newcommand{\\hoge}{foo}",
           "",
           "\\begin{document}",
           "\\end{document}",
@@ -70,6 +72,8 @@
           "\\usepackage{amsmath}",
           "%ソースを枠で囲む",
           "\\lstset{frame=trbl}",
+          "%自前コマンド",
+          "%\\newcommand{\\hoge}{foo}",
           "",
           "\\begin{document}",
           "\\end{document}",
@@ -166,7 +170,8 @@
         "  \\begin{table}[htbp]",
         "    \\begin{center}",
         "    \\caption[]{}",
-        "      \\begin{tabular}{|c||c|c|}\\hline",
+        // "      \\begin{tabular}{|c||c|c|}\\hline",
+        "\\begin{tabular}{c||c|c}\\noalign{\\hrule height 1pt} %一番上の横線だけ太くする",
         "        1 & 2 & 3 \\\\\\ \\hline \\hline",
         "        1 & 2 & 3 \\\\\\ \\hline",
         "        1 & 2 & 3 \\\\\\ \\hline",
@@ -207,7 +212,7 @@
     },
 
     "integral":{
-      "prefix": "seki",
+      "prefix": "sekibun",
       "body": "\\int_{${1:下の値}}^{${2:上の値}}  ${3:中の値}\\,dx ${4}"
     },
 
@@ -247,4 +252,3 @@
     },
 
 }
-
