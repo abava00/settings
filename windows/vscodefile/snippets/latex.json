@@ -23,7 +23,7 @@
           "% ヘッダの読込",
           "\\pagestyle{myheadings}",
           "%ヘッダの中身",
-          "\\markright{\\textcolor[gray]{0.7}{題名 \\hspace{20zw} B21P036 平間海渡}}",
+          "\\markright{\\textcolor[gray]{0.7}{題名 \\hspace{20zw} number name}}",
           "%余白の設定",
           "\\usepackage[top=12.7truemm,bottom=12.7truemm,left=12.7truemm,right=12.7truemm]{geometry}",
           "%段組み設定",
@@ -59,7 +59,7 @@
           "% ヘッダの読込",
           "\\pagestyle{myheadings}",
           "%ヘッダの中身",
-          "\\markright{\\textcolor[gray]{0.7}{題名 \\hspace{20zw} B21P036 平間海渡}}",
+          "\\markright{\\textcolor[gray]{0.7}{題名 \\hspace{20zw} 学籍番号 名前}}",
           "%余白の設定",
           "\\usepackage[top=12.7truemm,bottom=12.7truemm,left=12.7truemm,right=12.7truemm]{geometry}",
           "%画像の設定",
@@ -167,18 +167,18 @@
     "table":{
       "prefix": "table",
       "body": [
-        "  \\begin{table}[htbp]",
-        "    \\begin{center}",
+        "\\begin{table}[htbp]",
+        "  \\begin{center}",
         "    \\caption[]{}",
-        // "      \\begin{tabular}{|c||c|c|}\\hline",
-        "\\begin{tabular}{c||c|c}\\noalign{\\hrule height 1pt} %一番上の横線だけ太くする",
+        "    \\label{hello}",
+        "    \\begin{tabular}{c||c|c}\\noalign{\\hrule height 1pt} %一番上の横線だけ太くする",
         "        1 & 2 & 3 \\\\\\ \\hline \\hline",
-        "        1 & 2 & 3 \\\\\\ \\hline",
-        "        1 & 2 & 3 \\\\\\ \\hline",
-        "      \\end{tabular}",
-        "    \\label{}",
-        "    \\end{center}",
-        "  \\end{table}",
+        "        \\multicolumn{2}{c|}{1} & 3 \\\\\\\\ \\hline %横に結合",
+        "        1 & 2 & 3 \\\\\\ \\cline{2-3} % 縦に結合しない部分にだけ区分け線を引く",
+        "          & 2 & 3 \\\\\\ \\hline",
+        "    \\end{tabular}",
+        "  \\end{center}",
+        "\\end{table}",
       ],
       "description": "表を作る",
     },
@@ -191,6 +191,7 @@
         "  \\item ${ITEM1}\\mbox{}\\\\\\",
         "\\end{itemize}",
       ],
+      "description": "・で列挙",
     },
 
     "bullet_title":{
@@ -200,6 +201,7 @@
         "  \\item[${1:TITLE1}] \\mbox{}\\\\\\ ${2:ITEM1}",
         "\\end{description}",
       ],
+      "description": "タイトルを付けて列挙",
     },
 
     "bullet_num":{
@@ -209,46 +211,56 @@
         "  \\item ${ITEM1}\\mbox{}\\\\\\",
         "\\end{enumerate}",
       ],
+      "description": "番号を付けて列挙",
     },
 
     "integral":{
       "prefix": "sekibun",
-      "body": "\\int_{${1:下の値}}^{${2:上の値}}  ${3:中の値}\\,dx ${4}"
+      "body": "\\int_{${1:下の値}}^{${2:上の値}}  ${3:中の値}\\,d${4:x} ${5}",
+      "description": "積分を行う",
     },
 
     "sigma":{
       "prefix": "siguma",
       "body": "\\sum_{${1:はじめ}}^{${2:おわり}}  {${3:中の値}} ${4}",
+      "description": "総和を行う",
     },
 
     "delta":{
       "prefix": "bibun",
-      "body": "\\frac{d}{d${1:x}}{\\{${2:中の値}\\\\}}"
+      "body": "\\frac{d}{d${1:x}}{\\{${2:中の値}\\\\}}",
+      "description": "微分を行う",
     },
 
     "limit":{
       "prefix": "kyokugen",
-      "body": "\\lim_{${1:x} \\to ${2: 端っこ}} ${3:中の値}${4}"
+      "body": "\\lim_{${1:x} \\to ${2: 端っこ}} ${3:中の値}${4}",
+      "description": "極限を行う",
     },
 
     "exp":{
-      "prefix": "ee",
-      "body": "^{${1}}${2}"
+      "prefix": "eee",
+      "body": "^{${1}}${2}",
+      "description": "べき乗を行う",
     },
 
     "log":{
       "prefix": "log",
       "body": "\\log_{${1}}{${2}}${3}",
+      "description": "logを取る"
     },
 
     "leq":{
       "prefix": "ccc",
       "body": "\\leq",
+      "description": "cてなんか<に似てない?"
     },
 
     "geq":{
-      "prefix": "777",
+      "prefix": "zzz",
       "body": "\\geq",
+      "description": "zてなんか>に似てない?"
     },
 
 }
+
