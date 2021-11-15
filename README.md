@@ -1,4 +1,17 @@
 # 色々な種類(予定)の設定ファイルまとめ
+\
++ linux
+    + .vim
+       + vim関係のファイル
++ windows
+    + nvimfiles
+      + neovim関係のファイル(中身ほぼ無し)
+    + vimfiles
+      + vim関係のファイル
+    + vscodefile
+      + vscodeの同期がおかしくなった時の予備
+
+
 ## 設定ファイル読み込み(Vim)
 
 必要なもの
@@ -25,15 +38,6 @@ GitBashを起動します
 gitbashを閉じる
 
 vimを起動し```:PlugInstall```を実行
-
-
-~/vimfiles 以下(ない場合はvimflesも生成する)にフォルダが生成されます
-
-　
-
-ぜんぶGitbashで終わらせるにはどうしたらいいんですかね
-Gitbashのsh.exeへPATHを通せばできるのか...?
-
 ### LINUX
 
 terminalを起動します
@@ -45,9 +49,3 @@ terminalを起動します
 ``` sh install_linux.sh```
 
 ~/.vim 以下(ない場合はvimflesも生成する)にフォルダが生成されます
-
-※Linux のほうは拡張機能になにも書かれていません
-
-ある意味ではプレーンなものが使えるからいいのかも(?) 
-
-
