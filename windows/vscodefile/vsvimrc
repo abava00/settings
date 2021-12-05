@@ -11,7 +11,7 @@ nnoremap <Space>w <C-w><C-w>
 nnoremap <Space>a ggVG
 nnoremap <Space>bb :b
 "単語関係の処理
-cnoremap <Space>d diw
+nnoremap <Space>d diw
 nnoremap <Space>c ciw
 nnoremap <Space>y yiw
 nnoremap <Space>v yiw
