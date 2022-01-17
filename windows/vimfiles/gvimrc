@@ -1,3 +1,5 @@
+"colorscheme torte
+colorscheme nord
 set guioptions-=T
 set guioptions-=m
 set guioptions-=r
@@ -5,5 +7,8 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set guioptions-=b
-
-"set guifont=Cascadia\ Code\ PL:h14
+"フォントの設定
+set guifont=Cascadia\ Code\ PL:h13
+"set guifontwide=Cascadia_Code:h15
+"nnoremap <F12> :set relativenumber!<CR>
+set relativenumber
