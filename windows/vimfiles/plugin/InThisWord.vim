@@ -4,21 +4,22 @@ for key1 in split("dcyv",'\zs')
     for key3 in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_,./?\\;+:*@-=^~!#$%&",'\zs')
       if key2=="a"
         if key1=="v"
-          execute 'nnoremap ' . key1 . key2 . key3 . ' ' . 'F' . key3 . 'vf' . key3
+          execute 'nnoremap ' . key1 . key2 . key3 . ' ' . '<Space>F' . key3 . 'vf' . key3
         else
-          execute 'nnoremap ' . key1 . key2 . key3 . ' ' . 'F' . key3 . 'vf' . key3 . key1
+          execute 'nnoremap ' . key1 . key2 . key3 . ' ' . '<Space>F' . key3 . 'vf' . key3 . key1
         endif
       else
         if key1=="v"
-          execute 'nnoremap ' . key1 . key2 . key3 . ' ' . 'F' . key3 . 'lvf' . key3 . 'h'
+          execute 'nnoremap ' . key1 . key2 . key3 . ' ' . '<Space>F' . key3 . 'lvf' . key3 . 'h'
         else
-          execute 'nnoremap ' . key1 . key2 . key3 . ' ' . 'F' . key3 . 'lvf' . key3 . 'h' . key1
+          execute 'nnoremap ' . key1 . key2 . key3 . ' ' . '<Space>F' . key3 . 'lvf' . key3 . 'h' . key1
         endif
       endif
     endfor
   endfor
 endfor
 
+a hello world a
 
 " １～０を!～)に変換する
 function! MyConbart(number)
