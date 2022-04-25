@@ -19,8 +19,6 @@ for key1 in split("dcyv",'\zs')
   endfor
 endfor
 
-a hello world a
-
 " １～０を!～)に変換する
 function! MyConbart(number)
   if a:number=="1"
