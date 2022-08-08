@@ -131,6 +131,9 @@ let g:python3_host_prog = system('echo -n $(which python3)')
 " keymap
 "jjでescを行うようにする
 inoremap <silent>jj <ESC>
+"範囲選択を同一行内検索で行う時に便利になるかもしれないやつ
+vnoremap v iw
+nnoremap <silent>VV vF
 "画面の移動
 nnoremap <Space>w <C-w><C-w>
 "全て選択する
@@ -231,7 +234,7 @@ inoremap <F2> <Esc><F2>
 " keymap end------------------------------------
 
 " plugins
-" source $LOCALAPPDATA\\nvim-data\\vundle
+source $LOCALAPPDATA\\nvim-data\\vundle
 "TeXの設定
 "set concealcursor=""
 "let g:tex_flavor='platex'
@@ -301,5 +304,5 @@ let g:airline_mode_map = {
 
 " colorscheme
 "colorscheme nord
-" colorscheme tender
+colorscheme tender
 " colorscheme end------------------------------------
