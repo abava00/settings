@@ -1,0 +1,106 @@
+# using font HackGen Nerd Console
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+format = """
+[[\u256d\u2500\ue0b6](bold #b864f5)[$username$hostname](bold bg:#b864f5 fg:#ffffff)[\ue0b0](bold fg:#b864f5)](bold)\
+$directory\
+$git_branch\
+$git_commit\
+$cmd_duration\
+$status\
+$fill\
+$shell\
+$time
+$character\
+"""
+
+[username]
+format = """
+[$user]($style)\
+"""
+style_user = "#ffffff bold bg:#b864f5"
+style_root = "#ff0000 bold bg:#a1f564"
+disabled = false
+show_always = true
+
+[hostname]
+format = """
+$ssh_symbol\
+"""
+ssh_only = false
+disabled = false
+
+
+
+[directory]
+format = """
+[\ue0b0](fg:#ff479c inverted)[ $path](bold fg:#ffffff bg:#ff479c)[\ue0b0](fg:#ff479c)\
+"""
+truncation_length = 3
+truncation_symbol = "\uf115 /"
+home_symbol = "\uf7db "
+use_os_path_sep = false
+
+
+
+[cmd_duration]
+format = """
+[[\ue0b0](fg:#83769c inverted)\ufbab$duration\u2800](fg:#ffffff bg:#83769c)\
+"""
+min_time = 0
+
+[status]
+format = """
+[$symbol]($style)\
+"""
+style = ""
+symbol = "[[\ue0b0](fg:#83769c bg:#e91e63) [\ue23a](fg:#ffffff bg:#e91e63) [\ue0b4](fg:#e91e63)](bold bg:#e91e63)"
+success_symbol = "[[\ue0b0](fg:#83769c bg:#00897b) [\ue23a](fg:#ffffff bg:#00897b) [\ue0b4](fg:#00897b)](bold bg:#00897b)"
+disabled = false
+map_symbol = true
+recognize_signal_code = false
+
+[fill]
+symbol = " "
+
+[shell]
+format = """
+[\ue0b6](bold fg:#0077c2)$indicator[\ue0b2](inverted bold fg:#0077c2)\
+"""
+fish_indicator = "[ fish](fg:#ffffff bg:#0077c2)"
+powershell_indicator = "[\uf489 posh](fg:#ffffff bg:#0077c2)"
+unknown_indicator = "??(fg:#ffffff bg:#0077c2)"
+disabled = false
+
+[time]
+format = """
+[[\ue0b2](#2e9599)[$time](bg:#2e9599 fg:#000000)[\ue0b4](#2e9599)](bold)\
+"""
+disabled = false
+
+[character]
+format = """
+[\u2570\u2500\ue285\ufb00 ](#dcb7f7)\
+"""
+
+[package]
+disabled = true
+
+
+# レポジトリの内容に変更が無ければ背景黄色 あればオレンジ
+[git_branch]
+format = """
+[\ue0b0](fg:#fffb38 inverted)[$symbol ≡ $branch]($style)[\ue0b0](fg:#fffb38)\
+"""
+symbol = " "
+style = "fg:#000000 bg:#fffb38 "
+# symbol = " \uf046 \uf044 \uf692"
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
+# 
+# 
+# 
+# 
