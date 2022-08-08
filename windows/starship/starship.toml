@@ -1,3 +1,6 @@
+# 参考にしたテーマ
+# https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/jandedobbeleer.omp.json
+
 # using font HackGen Nerd Console
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -75,8 +78,8 @@ untracked = "|\uf756 ×${count}"
 stashed = "|\uf187 ×${count}"
 modified = "|\uf044 "
 deleted = "|\uf1f8 ×${count}"
-staged = '[++\($count\)](green)'
-style = "bold bg:#f57620"
+staged = '|++\($count\)'
+style = "bold fg:#eeeeee bg:#f57620"
 
 [python]
 format = """
