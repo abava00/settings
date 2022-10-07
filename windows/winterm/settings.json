@@ -35,6 +35,10 @@
             "keys": "alt+shift+d"
         },
         {
+            "command": "closePane",
+            "keys": "alt+0"
+        },
+        {
             "command": 
             {
                 "action": "switchToTab",
@@ -121,8 +125,7 @@
             "command": 
             {
                 "action": "closeTab"
-            },
-            "keys": "alt+0"
+            }
         },
         {
             "command": 
@@ -139,6 +142,9 @@
                 "index": 0
             },
             "keys": "alt+1"
+        },
+        {
+            "command": "quit"
         }
     ],
     "copyFormatting": "none",
