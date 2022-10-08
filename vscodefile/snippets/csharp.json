@@ -1,0 +1,1676 @@
+{
+ 	// Place your snippets for csharp here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+  // }
+
+    //以下の分類はおおよその分類です  実際は多少異なることがあります 初心者だもの
+//システム系------------------------------------------------------
+    "System":{
+      "prefix": "System;",
+      "body": "System;",
+    },
+
+    "System.Drawing":{
+      "prefix": "System.Drawing",
+      "body": "System.Drawing;"
+    },
+
+    "System.Windows.":{
+      "prefix": "System.Window...",
+      "body": "System.Windows.Forms;"
+    },
+
+    "System.Collections":{
+      "prefix": "System.Collec...",
+      "body": "System.Collections.Generic;",
+    },
+
+    "System.IO":{
+      "prefix": "System.IO",
+      "body": "System.IO; //well... you will need [STAThread] ?",
+      "description": [
+        "System.IO",
+        "[STA Thread] 属性を付けた方がいいらしい"
+      ],
+    },
+
+    "System.Text":{
+      "prefix": "System.Text.RegularExpressions",
+      "body": "System.Text.RegularExpressions;",
+    },
+
+    "System.Net":{
+      "prefix": "System.Net",
+      "body": "System.Net",
+    },
+
+//属性----------------------------------------------------------
+    "[STAThread]":{
+      "prefix": "[STAThread]",
+      "body": "[STAThread",
+      "description": [
+        "属性 System.IO 下で",
+        "fileDialog を用いるときとかにMainの上に必要らしい",
+      ]
+    },
+
+//単語系--------------------------------------------------------
+    "using":{
+      "prefix": "using",
+      "body": "using",
+    },
+
+    "class":{
+      "prefix": "class",
+      "body": "class",
+    },
+
+    "public":{
+      "prefix": "public",
+      "body": "public",
+      "description": "public 他の場所からもアクセスできる",
+    },
+
+    "private":{
+      "prefix": "private",
+      "body": "private",
+      "description": "private 外部からアクセスできない",
+    },
+
+    "static":{
+      "prefix": "static",
+      "body": "static",
+      "description": "static プログラム全体で１つの値を持つようになるよ？ 察して",
+    },
+
+    "protected":{
+      "prefix": "protected",
+      "body": "protected",
+      "description": "protected 派生クラスからのみアクセスできる"
+    },
+
+    "virtual":{
+      "prefix": "virtual",
+      "body": "virtual",
+      "description": [
+        "virtual 上書きされる予定のメンバ",
+        "virtual void AAA()",
+        "{",
+        "...",
+        "}",
+        "みたいに使うよ",
+      ],
+    },
+
+    "override":{
+      "prefix": "override",
+      "body": "override",
+      "description": [
+        "override 上書きするメンバ",
+        "override void AAA()",
+        "{",
+        "...",
+        "}",
+        "みたいに使うよ",
+      ],
+    },
+
+    "void":{
+      "prefix": "void",
+      "body": "void",
+    },
+
+    "null":{
+      "prefix": "null",
+      "body": "null",
+    },
+    "true":{
+      "prefix": "true",
+      "body": "true",
+    },
+    "false":{
+      "prefix": "false",
+      "body": "false",
+    },
+    "default:":{
+      "prefix": "default:",
+      "body": "default:",
+      "description": "default switch文で使おうね",
+    },
+    "Length":{
+      "prefix": "Length",
+      "body": "Length",
+      "description": "Length 行列等の長さの取得",
+    },
+    "this":{
+      "prefix": "this",
+      "body": "this",
+      "description": "this クラス内で 自分自身のオブジェクト をあらわす",
+    },
+    "Yes":{
+      "prefix": "Yes",
+      "body": "Yes",
+    },
+    "No":{
+      "prefix": "No",
+      "body": "No",
+    },
+    "OK":{
+      "prefix": "OK",
+      "body": "OK"
+    },
+    "Cancel":{
+      "prefix": "Cancel",
+      "body": "Cancel",
+    },
+    "break":{
+      "prefix": "break",
+      "body": "break",
+    },
+    "return":{
+      "prefix": "return",
+      "body": "return",
+    },
+    "Size":{
+      "prefix": "Size",
+      "body": "Size",
+    },
+    "Path":{
+      "prefix": "Path",
+      "body": "Path",
+    },
+    "Read":{
+      "prefix": "Read",
+      "body": "Read",
+    },
+    "Write":{
+      "prefix": "Write",
+      "body": "Write",
+      "description": [
+        "Write(NUMBER);",
+        "指定したバッファに書き出す(バイナリの時)",
+      ],
+    },
+    "Close":{
+      "prefix": "Close",
+      "body": "Close",
+    },
+    "Success":{
+      "prefix": "Success",
+      "body": "Success",
+    },
+
+    /* 本当はプロパティ枠だけど */
+    "Width":{
+      "prefix": "Width",
+      "body": "Width",
+      "description": "Width 幅"
+    },
+    "Height":{
+      "prefix": "Height",
+      "body": "Height",
+      "description": "Height 高さ",
+    },
+    "Top":{
+      "prefix": "Top",
+      "body": "Top",
+      "description": "Top 上辺",
+    },
+    "Bottom":{
+      "prefix": "Bottom",
+      "body": "Bottom",
+      "description": "Bottom 下辺",
+    },
+    "Left":{
+      "prefix": "Left",
+      "body": "Left",
+      "description": "Left 左辺",
+    },
+    "Right":{
+      "prefix": "Right",
+      "body": "Right",
+      "description": "Right 右辺",
+    },
+    "ClientSize":{
+      "prefix": "ClientSize ウィンドウの領域サイズを取得，設定する",
+      "body": "ClientSize",
+      "description": [
+        "プロパティ ウィンドウ領域のサイズを取得，設定する",
+        "Any.ClientSize = new Size(WIDTH, HEIGHT); ",
+        "で窓を設定することができる",
+      ],
+    },
+    "Index":{
+      "prefix": "Index マッチした最初の位置を取得する",
+      "body": "Index",
+      "description": [
+        "プロパティ マッチした最初の位置を取得する",
+        "Match m = NULL",
+        "TEXTBOX.Select(m.Index, m.Length);",
+        "とかで使える",
+      ]
+    },
+
+    /* 型系 */
+    "int":{
+      "prefix": "int",
+      "body": "int",
+    },
+    "double":{
+      "prefix": "double",
+      "body": "double",
+    },
+    "string":{
+      "prefix": "str",
+      "body": "str",
+    },
+    "Image(単語)":{
+      "prefix": "Image 画像を入れられる...?\npictuerBoxと何が違うんだ",
+      "body": "Image"
+    },
+    "Bitmap(単語)":{
+      "prefix": "Bitmap 画像を1ピクセルづつ取得・設定できる...?",
+      "body": "Bitmap"
+    },
+    "Graphics(単語)":{
+      "prefix": "Graphics",
+      "body": "Graphics",
+      "description": "Graphics(単語)\nPaintEventArgsの中で使う...のか？",
+    },
+    "Color(単語)":{
+      "prefix": "Color",
+      "body": "Color",
+      "description": ["Color(単語)\n色を取得・設定できる...?",
+        "Color Any = Any.GetPixel(x座標, y座標); とかに使える"
+      ],
+    },
+    "DealogResult ダイアログリザルト(単語)":{
+      "prefix": "DialogResult ダイアログリザルト(単語)",
+      "body": "DialogResult"
+    },
+    "Match(単語)":{
+      "prefix": "Match",
+      "body":"Match",
+      "description": [
+        "テキストボックスをRegexで検索するときに使う",
+        "Match Any = null",
+        "Any = rx.Match(TEXT)で検索ができる",
+        "適する単語があると Trueを返す"
+      ]
+    },
+    "char":{
+      "prefix": "char",
+      "body": "char",
+    },
+    "bool":{
+      "prefix": "bool",
+      "body": "bool",
+    },
+    "Point":{
+      "prefix": "Point",
+      "body": "Poinr",
+      "description": [
+        "Point Any = new Point(X, Y);\nで座標を取得・設定できる"  ,
+      ],
+    },
+    "Directory":{
+      "prefix": "Directory",
+      "body": "Directory",
+    },
+    "IPHostEntry(単語)":{
+      "prefix": "IPHostEntry",
+      "body": "IPHostEntry",
+    },
+    "IPAddress(単語)":{
+      "prefix": "IPAddress",
+      "body": "IPAddress",
+    },
+
+
+    //クラス系(コントロール系)------------------------------------------------------
+
+    "Object sender, EventArgs e":{
+      "prefix": "Object sender, ... イベント設定",
+      "body": "Object sender, EventArgs e",
+      "description": [
+        "一般的操作イベント",
+        "public void EVENT(Object sender, EventArgs e)",
+        "{...}",
+        "で一般的操作のイベントを設定できる"
+      ],
+    },
+
+    "Object sender, KeyEventArgs e":{
+      "prefix": "Object sender, ... イベント設定",
+      "body": "Object sender, KeyEventArgs e",
+      "description": [
+        "キー操作イベント",
+        "public void EVENT(Object sender,KeyEventArgs e)",
+        "{...}",
+        "でキー操作のイベントを設定できる",
+        "e は押されたキーの情報",
+      ],
+    },
+
+    "Object sender, MouseEventArgs e":{
+      "prefix": "Object sender, ... イベント設定",
+      "body": "Object sender, MoueEventArgs e",
+      "description": [
+        "マウス操作イベント(詳細)",
+        "public void EVENT(Object sender,MouseEventArgs e)",
+        "{...}",
+        "でキー操作のイベントを設定できる",
+        //"e は押されたキーの情報",
+      ],
+    },
+
+    "Object sender, PaintEventArgs e":{
+      "prefix": "Object sender, ... イベント設定",
+      "body": "Object sender, PaintEventArgs e",
+      "description": [
+        "描写操作イベント",
+        "public void EVENT(Object sender,PaintEventArgs e)",
+        "{...}",
+        "でキー操作のイベントを設定できる",
+        //"e は押されたキーの情報",
+      ]
+    },
+
+    //イベント系(デリケート系)----------------------------------------------------
+
+    "Click":{
+      "prefix": ".Click クリックイベントを設定する",
+      "body": ".Click",
+      "description": [
+        "イベント クリック操作",
+        "Any.Click += EVENT; でAnyをクリックしたいう動作を設定できる",
+        "EventArgs使用",
+      ]
+    },
+
+    "MouseEnter":{
+      "prefix": ".MouseEnter 入りイベントを設定する",
+      "body": ".MouseEnter",
+      "description": [
+        "イベント マウスの入り操作",
+        "Any.MouseEnter += EVENT; でAny に入りしたという動作を設定できる",
+        "EventArgs使用",
+      ],
+    },
+
+    "MouseLeave":{
+      "prefix": ".MouseLeave 出イベントを設定する",
+      "body": ".MouseLeave",
+      "description": [
+        "イベント マウスの出操作",
+        "Any.MouseLeave += EVENT; で Any から出たという動作を設定できる",
+        "EventArgs使用"
+      ]
+    },
+
+    "MouseUp":{
+      "prefix": ".MouseUp マウスを離した",
+      "body": ".MouseUp",
+      "description": [
+        "イベント マウスを離した",
+        "Any.MouseUp += EVENT; で Any 上でマウスを離したという動作を設定できる",
+        "MouseEventArgs利用"
+      ]
+    },
+
+    "MouseDown":{
+      "prefix": ".MouseDown マウスを押した",
+      "body": ".MouseDown",
+      "description": [
+        "イベント マウスを押した",
+        "Any.MouseDown += EVENT; で Any 上でマウスを離したという動作を設定できる",
+        "MouseEventArgs利用",
+      ]
+    },
+
+    "MouseMove":{
+      "prefix": ".MouseMove マウスを動かした",
+      "body": ".MouseMove",
+      "description": [
+        "イベント マウスを動かした",
+        "Any.MouseMove += EVENT; で Any 上でマウスを動かしたという動作を設定できる",
+        "MouseEventArgs利用",
+      ]
+    },
+
+    "KeyUp":{
+      "prefix": ".KeyUp キーを離した",
+      "body": ".KeyUp",
+      "description": [
+        "イベント キーを離した",
+        "Any.KeyUp += EVENT; でAny上でキーが離されたという動作を設定できる",
+        "KeyEventArgs利用",
+      ],
+    },
+
+    "KeyDown":{
+      "prefix": ".KeyDown キー操作のイベントを設定する",
+      "body": ".KeyDown",
+      "description": [
+        "イベント キー入力操作",
+        "Any.KeyDown += EVENT; でAny上でキーがおされたという動作を設定できる",
+        "KeyEventArgs利用",
+      ],
+    },
+
+    "Tick":{
+      "prefix": ".Tick タイマーイベントを設定する",
+      "body": ".Tick",
+      "description": [
+        "イベント タイマーが進んだ",
+        "Any.Tick += EVENT; で Any のタイマーが進んだという動作を設定できる",
+        "EventArgs利用"
+      ]
+    },
+
+    "Paint":{
+      "prefix": ".Paint 描写イベントを設定する",
+      "body": ".Paint",
+      "description": [
+        "イベント 描写操作",
+        "Any.Paint += EVENT; で Any 描写する必要が起こった動作を設定できる",
+        "PaintEventArgs利用",
+        "この中でGraphics オブジェクトを使おう",
+      ],
+    },
+
+    "CheckedChanged":{
+      "prefix": ".CheckedChanged チェックマークイベントを設定する",
+      "body": ".CheckedChanged",
+      "description": [
+        "イベント チェック変更操作",
+        "Any.CheckedChanged += EVENT; で Any のチェックが変更されたという動作を設定できる",
+        "EventArgs利用",
+      ],
+    },
+
+    "SelectedIndexChanged":{
+      "prefix": ".SelectedIndexChanged リスト変更イベントを設定する",
+      "body": ".SelectedIndexChanged",
+      "description": [
+        "イベント リストの選択の変更操作",
+        "Any.SelectedIndexChanged += EVENT; で Any の選択が変更されたという動作を設定できる",
+        "EventArgs利用",
+      ],
+    },
+
+    "CanGoBackChanged":{
+      "prefix": "CanGoBackChanged 戻る履歴が変更された",
+      "body": "CanGoBackChanged",
+      "description": [
+        "イベント 戻る履歴が変更された",
+        "Any.CanGoBackChanged += EVENT; でAnyのブラウザでの戻る履歴が変更されたことを検知する",
+        "EbentArgs利用",
+      ]
+    },
+
+    //メソッド系(コンストラクタも混ざってます)------------------------------------------------
+
+    "Console":{
+      "prefix": "Console コンソール画面操作 Systemシステムより",
+      "body": "Console",
+      "description": [
+        "メソッド コンソール画面操作",
+        "new での設定は要らない",
+      ],
+    },
+
+    "ConvertToString":{
+      "prefix": "Convert.ToSTring Systemシステムより",
+      "body": "Convert.ToString($1);",
+      "description": [
+        "メソッド 整数を文字列に変換する",
+        "new での設定は要らない",
+      ],
+    },
+
+    "ConvertToInt32":{
+      "prefix": "Convert.ToInt32 Systemシステムより",
+      "body": "Convert.ToInt32($1);",
+      "description": [
+        "メソッド 文字列を整数に変換する",
+        "new での設定は要らない",
+      ],
+    },
+
+    "Application":{
+      "prefix": "Application... アプリケーション実行",
+      "body": "Application.Run($1);",
+      "description": [
+        "メソッド アプリケーション実行",
+        "new での設定は要らない",
+      ],
+    },
+
+    "Form":{
+      "prefix": "Form ウィンドウ操作 Formsシステムより",
+      "body": "Form",
+      "description": [
+        "メソッド ウィンドウ操作",
+        "Form Any = new Form(); で設定することができる",
+      ],
+    },
+
+    "Label":{
+      "prefix": "Label 文字操作 Formsシステムより",
+      "body": "Label",
+      "description": [
+        "メソッド 文字操作",
+        "Label Any = new Label(); で設定することができる",
+      ],
+    },
+
+    "PictureBox":{
+      "prefix": "PictureBox 画像を表示する Drawingシステムより",
+      "body": "PictureBox",
+      "description": [
+        "メソッド 画像を表示する",
+        "PictureBox Any = new PictureBox(); で設定できる",
+      ],
+    },
+
+    "Button":{
+      "prefix": "Button ボタンを設定する Formsシステムより",
+      "body": "Button",
+      "description": [
+        "メソッド？ ボタンを設定する",
+        "Button Any = new Button(); で設定できる"
+      ],
+    },
+
+    "CheckBox":{
+      "prefix": "CheckBox チェックボックスを設定する Formsシステムより",
+      "body": "CheckBox",
+      "description": [
+        "メソッド チェックボックスを設定する",
+        "CheckBox Any = new CheckBox(); で設定できる"
+      ]
+    },
+
+    "RadioButton":{
+      "prefix": "RadioButton ラジオボタンを設定する Formsシステムより",
+      "body": "RadioButton",
+      "description": [
+        "メソッド ラジオボタンを設定する",
+        "RadioButton Any = new RadioButton(); で設定できる"
+      ]
+    },
+
+    "GroupBox":{
+      "prefix": "GroupBox グループボックスを設定する Formsシステムより",
+      "body": "GroupBox",
+      "description": [
+        "メソッド グループボックスを設定する",
+        "GroupBox Any = new GroupBox(); で設定できる",
+        "ラジオボタンを1まとめにするのに使う",
+        "rb[n].Parent = Any; でグループボックスにラジオボタンを載せられる",
+      ]
+    },
+
+    "WebBrowser":{
+      "prefix": "WebBrowser Webブラウザを作成する Formsシステムより",
+      "body": "WebBrowser",
+      "description": [
+        "メソッド Webブラウザを作成する",
+        "WebBrowser Any = new WebBrowser();",
+        "でAnyにブラウザを作成できる",
+      ],
+    },
+
+    "Uri":{
+      "prefix": "Uri 指定したURIでオブジェクトを作成する",
+      "body": "Uri",
+      "description": [
+        "メソッド 指定したURIでオブジェクトを作成する",
+        "Uri Any = new Uri(https://~~~);",
+        "でHttps以下のオブジェクトを作成する",
+        "WEBBROWSER.Url = Any でAnyのサイトを開ける",
+      ]
+    },
+
+    "FlowLayoutPanel":{
+      "prefix": "FlowLayoutPanel",
+      "body": "FlowLayoutPanel",
+      "description": [
+        "メソッド フローレイアウトパネルを作成する",
+        "FlowLayoutPanel Any = new FlowLayoutPanel(); で作成できる",
+      ],
+    },
+
+    "TablePanel":{
+      "prefix": "TablePanel",
+      "body": "TablePanel",
+      "description": [
+        "メソッド テーブルレイアウトパネルを作成",
+        "TablePanel Any = new TablePanel(); で作成できる",
+      ],
+    },
+
+    "TableLayoutPanel":{
+      "prefix": "TableLyoutPanel",
+      "body": "TableLayoutPanel",
+      "description": [
+        "メソッド テーブルレイアウトパネルを作成する",
+        "TableLayoutPanel Any = new TableLayoutPanel(); で作成できる",
+      ],
+    },
+
+    "TextBox":{
+      "prefix": "TextBox テキストボックスを作成する Formsシステムより",
+      "body": "TextBox",
+      "description": [
+        "メソッド テキストボックスを作成",
+        "TextBox Any = new TextBox(); で作成できる",
+      ]
+    },
+
+    "RichTextBox":{
+      "prefix": "RichTextBox リッチテキストボックスを作成する Formsクラスより",
+      "body": "RichTextBox",
+      "description": [
+        "メソッド リッチテキストボックス(文字の色を変えたりできる)作成する",
+        "RichTextBox Any = RichTextBox(); で作成",
+      ]
+    },
+
+    "ListBox":{
+      "prefix": "ListBox リストボックスを設定する Formsシステムより",
+      "body": "ListBox",
+      "description": [
+        "メソッド リストボックスを作成する",
+        "ListBox lbx = new ListBox(); で作成できる",
+        "要素は\n string[] Str = {\"A\", \"B\", \"C\"...}; で設定",
+        "項目追加は\n lbx.Items.Add(str[n]); とかで追加する",
+      ]
+    },
+
+    "MenuStrip":{
+      "prefix": "MenuStrip メインメニューを設定する Formsシステムより",
+      "body": "MenuStrip",
+      "description": [
+        "メソッド メインメニューを作成する",
+        "MenuStrip Any = new MenuStrip(); で作成できる",
+        "1: MenuStrip :ms 作成\n2: ToolStripMenuItem :mi 作成",
+        "3: ドロップダウンするメニューアイテムを親メニューアイテムに設定\nmi[N].DropDownItems.Add(mi[n]);",
+        "4: ドロップダウンしない最上位のメニューアイテムをメインメニューに追加\nms.Items.Add(mi[n]);",
+        "5: メインメニューをフォームに追加する fm.MainMenuStrip = ms;",
+      ]
+    },
+
+    "ToolStripMenuItem":{
+      "prefix": "ToolStripMenuItem メニューを設定する",
+      "body": "ToolStripMenuItem",
+      "description": [
+        "メソッド メニューを作成する",
+        "ToolStripMenuItem Any = new ToolStripMenuItem(); で作成できる",
+        "MenuStrip 関係で使えるよ",
+      ]
+    },
+
+    "ToolStrip":{
+      "prefix": "ToolStrip ツールバーを作成する",
+      "body": "ToolStrip",
+      "description": [
+        "メソッド ツールバーを作成する",
+        "ToolStrip Any = new ToolStrip();",
+        "で設定できる",
+        "ToolStripButton と組合せることができるよ",
+      ],
+    },
+
+    "ToolStripButton":{
+      "prefix": "ToolStripButton ツールボタンを作成する",
+      "body": "ToolStripButton",
+      "description": [
+        "メソッド ツールボタンを作成する",
+        "ToolStripButton Any = new ToolStripButton();",
+        "で設定できる",
+        "ToolStrip と組合せることができるよ"
+      ],
+    },
+
+    "Random":{
+      "prefix": "Random 乱数を設定する",
+      "body": "Random",
+      "description": [
+        "メソッド 乱数を設定する",
+        "Random Any = new Random(); Anyに乱数を設定できる",
+        "これにAny.Next(NUMBER);",
+        "で 0 以上NUMBER未満の乱数になる",
+      ],
+    },
+
+    "ToolStripSeparator":{
+      "prefix": "ToolStripSeparator セパレータを設定する",
+      "body": "ToolStripSeparator",
+      "description": [
+        "メソッド セパレータ(仕切り)を作成する",
+        "mi[n].DropDownItems.Add(new ToolStripSeparator()); で作成できる",
+        "MenuStrip 関係で使える？",
+      ]
+    },
+
+    "Timer":{
+      "prefix": "Timer タイマーを用意する",
+      "body": "Timer",
+      "description": [
+        "メソッド タイマーを用意する",
+        "Timer Any = new Timer(); で作成できる",
+        "Any.Interval = NUMBEr;と\nAny.Start();が使える",
+      ]
+    },
+
+    "SolidBrush":{
+      "prefix": "SolidBrush ブラシの種類(塗りつぶし)",
+      "body": "SolidBrush",
+      "description": [
+        "メソッド ブラシの種類(塗りつぶし)",
+        "SolidBrush Any = new SolidBrush(COLOR);",
+        "で塗り方を設定できる？"
+      ],
+    },
+
+    "TreeView":{
+      "prefix": "TreeView ツリーを作成する",
+      "body": "TreeView",
+      "description": [
+        "メソッド ツリーを作成する",
+        "TreeView Any = new TreeView()",
+        "で設定できる",
+      ],
+    },
+
+    "TreeNode":{
+      "prefix": "TreeNode ノードを作成する",
+      "body": "TreeNode",
+      "description": [
+        "メソッド ノードを作成する",
+        "TreeNode Any = new TreeNode();",
+        "で設定できる",
+        "TREE.Nodes.Add(Any);",
+        "でツリーにノードを追加できる",
+      ]
+    },
+
+    "FillEllipse":{
+      "prefix": ".FillEllipse 円を描写します",
+      "body": ".FillEllise(${BRUSH}, ${X}, ${Y}, ${WIDTH}, ${HEIGHT});",
+      "description": [
+        "メソッド 円を描写します",
+        "g.FillEllipse(Brush, x, y, w, h); \nで円を描写することができる",
+      ]
+    },
+
+    "MessageBox":{//謎 of 謎機能
+      "prefix": "MessageBox メッセージボックスを設定する",
+      "body": "MessageBox.Show(\"${TYTLE}\", \"${BUTTON_TYTLE}\", MessageBoxButtons.${BUTTON}, MessageBoxIcon.${ICON});",
+      "description": [
+        "メッセージボックスを設定する",
+        "MessageBoxButton あってもなくてもいい\nOK, OKCancel, YesNo, YesNoCancel",
+        "MessageBoxIcon あってもなくてもいい\nError, Information, Warning, Question",
+      ]
+    },
+
+    "DateTime":{
+      "prefix": "DateTime 時刻を設定する",
+      "body": "DateTime",
+      "description": [
+        "時刻を設定する",
+        "DateTime Any = DateTime.SET; で Any に SET の時刻を設定できる",
+        "SET\n Now:今の時刻,  "
+      ]
+    },
+
+    "OpenFileDialog":{
+      "prefix": "OpenFileDialog ファイルを開くダイアログを作成する IOシステムより",
+      "body": "OpenFileDialog",
+      "description": [
+        "メソッド 「ファイルを開く」ダイアログボックスを作成する",
+        "OpenFileDialog Any = new OpenFileDialog()",
+        "で Any をファイルを開くダイアログにできる",
+        "Any.ShowDialog() でダイアログを可視化できる",
+      ]
+    },
+
+    "FileInfo":{
+      "prefix": "FileInfo ファイル情報を取得する IOシステムより",
+      "body": "FileInfo",
+      "description": [
+        "メソッド ファイル情報を取得する",
+        "FileInfo Any = new FileInfo(FILE.FileName)",
+        "で Any が FILE の情報を取得できるようになる",
+      ]
+    },
+
+    "SaveFileDialog":{
+      "prefix": "SaveFileDialog ファイル保存のダイアログを作成する",
+      "body": "SaveFileDialog",
+      "description": [
+        "メソッド 「ファイルを保存する」ダイアログボックスを作成する",
+        "SaveFileDialog Any = new SaveFileDialog()",
+        "で Any をファイルを保存するダイアログにできる",
+        "Any.ShowDialog() でダイアログを可視化できる",
+      ],
+    },
+
+    "StreamReader":{
+      "prefix": "StreamReader 指定ファイル・エンコーディングで文字入力をストリームを作成する",
+      "body": "StreamReader",
+      "description": [
+        "メソッド 指定ファイル・エンコーディングで文字入力をストリームを作成する",
+        "SteamReader Any = new StreamReader(FileName, EncodingName);",
+        "で Any が FileName を Encoding で読み取る",
+      ],
+    },
+
+    "StreamReader...":{
+      "prefix": "StreamReader...",
+      "body": "StreamReader(${FILENAME}, System.Text.Encoding.${FONTNAME});"
+    },
+
+    "StreamWriter":{
+      "prefix": "StreamWriter 指定ファイルで文字出力ストリームを作成する",
+      "body": "StreamWriter",
+      "description": [
+        "StreamWriter Any = new StreamWriter(TEXT);",
+        "で Any が TEXT を出力する",
+      ],
+    },
+
+    "FileStream":{
+      "prefix": "FileStream 指定ファイル名・オープンモード・アクセスモードでファイル入出力ストリームを作成する",
+      "body": "FileStream",
+      "description": [
+        "FileStream 指定ファイル名・オープンモード・アクセスモードでファイル入出力ストリームを作成する",
+        "FileStream Any = new FileStream(FILENAME, FILEMODE, FILEACCESS);",
+      ],
+    },
+
+    "FileStream...":{
+      "prefix": "FileStream...",
+      "body": "FileStream(${FILENAME}, FileMode.OpenOrCreate, FileAccess.ReadWrite)",
+    },
+
+    "BinaryReader":{
+      "prefix": "BinaryReader 指定ファイルストリームでバイナリ入力ストリームを作成する",
+      "body": "BinaryReader",
+      "description": [
+        "メソッド 指定ファイルストリームでバイナリ入力ストリームを作成する",
+        "BinaryReader Any = new BinaryReader(FILESTREAM);",
+        "で Any に FILESTREAM におけるバイナリを取得できる",
+      ],
+    },
+
+    "Cut":{
+      "prefix": "Cut 選択範囲をカットする",
+      "body": "Cut",
+      "description": [
+        "メソッド 選択範囲をカットする TextBoxより",
+        "Any.Cut();",
+        "で Any 内で選択された文字をカットする",
+      ],
+    },
+
+    "Copy":{
+      "prefix": "Copy 選択範囲をコピーする",
+      "body": "Copy",
+      "description": [
+        "メソッド 選択範囲をコピーする TextBoxより",
+        "Any.Copy();",
+        "で Any 内で選択された文字をコピーする",
+      ],
+    },
+
+    "Paste":{
+      "prefix": "Paste 選択範囲をカットする",
+      "body": "Paste",
+      "description": [
+        "メソッド 選択範囲をカットする TextBoxより",
+        "Any.Paste();",
+        "で Any 内で選択された文字をカットする",
+      ],
+    },
+
+    "Regex":{
+      "prefix": "Regex 指定パターンの正規表現を作成する Text.RehularExpressionsシステムより",
+      "body": "Regex",
+      "description": [
+        "Regex Any = new Regex(パターン)",
+        "でAnyを指定したパターンの正規表現にする",
+      ],
+    },
+
+    "Dns":{
+      "prefix": "Dns IP系のなんか System.Netシステムより",
+      "body": "Dns",
+      "description": [
+      ]
+    },
+
+    "IPHostEntry":{
+      "prefix": "IPHostEntry IP系のなんか System.Netシステムより",
+      "body": "IPHostEntry",
+      "description": [
+
+      ]
+    },
+
+    "BinaryWriter":{
+      "prefix": "BinaryWriter 指定ファイルストリームでバイナリ出力ストリームを作成する",
+      "body": "BinaryWriter",
+      "description": [
+        "メソッド 指定ファイルストリームでバイナリ出力ストリームを作成する",
+        "BinaryWriter Any = new BinaryWriter(FILESTREAM);",
+        "で Any に FILESTREAM におけるバイナリを取得できる",
+      ],
+    },
+
+    "Process":{
+      "prefix": "Process プロセスを作成する",
+      "body": "Process",
+      "description": [
+        "プロセスを作成する",
+        "Process.Start(Any); でAnyのファイルを関連づいたプログラムで起動する",
+      ],
+    },
+
+
+    "EventHandler":{
+      "prefix": "EventHandler",
+      "body": "EventHandler($1);",
+      "description": [
+        "メソッド イベントを設定する",
+        "Any.EVENT += EventHandler(EVENTNAME);",
+        "で Any で EVENT した時の動作 EVENTNAME を設定できる",
+      ],
+    },
+
+    "KeyEventHandler":{
+      "prefix": "KeyEventHandler",
+      "body": "KeyEventHandler($1);",
+      "description": [
+        "メソッド キーイベントを設定する",
+        "Any.EVENT += KeyEventHandler(EVENTNAME);",
+        "で Any で EVENT した時の動作 EVENTNAME を設定できる",
+      ],
+    },
+
+
+    "PaintEventHandler":{
+      "prefix": "PaintEventHandler",
+      "body": "PaintEventHandler($1);",
+      "description": [
+        "メソッド ペイントイベントを設定する",
+        "Any.EVENT += PaintEventHandler(EVENTNAME);",
+        "で Any で EVENT した時の動作 EVENTNAME 設定する",
+      ],
+    },
+
+// .の後につく奴------------------------------------------------------------
+    "WriteLine":{
+      "prefix": ".WriteLine 指定した文字列に書き出す(1行)",
+      "body": ".WriteLine(\"$1\");",
+    },
+
+    "Text":{
+      "prefix": ".Text 文字を操作する",
+      "body": ".Text",
+      "description": [
+        "プロパティ 文字操作 Formsクラスより",
+        "Any.Text = \"Hoge\"; でAnyの文字を設定できる",
+      ],
+    },
+
+    "Parent":{
+      "prefix": ".Parent 他クラスに載せる",
+      "body": ".Parent",
+      "description": [
+        "プロパティ 他クラスに載せる Formsクラスより",
+        "Any.Parent = Something でSomethingの上にAnyを載せることができる",
+      ],
+    },
+
+    "Image":{
+      "prefix": ".Image 画像を設定する",
+      "body": ".Image",
+      "description": [
+        "プロパティ 画像設定 Drawingクラスより",
+        "Any.Image = Image.FromFile(\"C:/~/~\"); でAnyの画像を設定できる",
+      ],
+    },
+
+    "Graphics":{
+      "prefix": ".Graphics グラフィックオブジェクト取得",
+      "body": ".Graphics",
+      "description": [
+        "オブジェクト？ ",
+        "Graphics Any = e.Graphics; で 取得できる",
+        "Graphics(単語)\nPaintEventArgsの中で使う...のか？",
+      ]
+    },
+
+    "BackGroundImage":{
+      "prefix": "BackGroundImage 背景を設定する",
+      "body": "BackGroundImage",
+      "description": [
+        "プロパティ 背景設定 Formsクラスより？",
+        "Any.BackGroundImage = 画像; でanyの背景を設定できる",
+      ],
+    },
+
+    "FromFile":{
+      "prefix": ".FromFile ファイルのパスを指定する",
+      "body": ".FromFile",
+      "description": [
+        "プロパティ ファイルのパスを指定する Drawingクラスより",
+        "Any.FormFile(\"C:~/~/~\"); でAnyのパスを指定できる",
+      ],
+    },
+
+    "keyCode":{
+      "prefix": ".KeyCode キーの情報取得",
+      "body": ".KeyCode",
+      "description": [
+        "プロパティ OOキーを押したかの判定",
+        "e.KeyCode = ...; で e が何のキーを押されたか設定できる",
+        "詳細は System.Windows.Forms.Keys 列挙体に入ってる",
+      ],
+    },
+
+    "Dock":{
+      "prefix": ".Dock コントロールのドッキング",
+      "body": ".Dock = DockStyle.$1;",
+      "description": [
+        "プロパティ コントロールのドッキング Formsクラスより",
+        "Any.Dock = DockStyle.連結方法; でドッキングの仕方を設定できる",
+        "Fill:大きさいっぱい  Top:上に連結",
+        "Bottom:下に連結  Left:左に連結  Right:右に連結",
+      ],
+    },
+
+    "ColumnCount":{
+      "prefix": ".ColumnCount 列数指定・取得",
+      "body": ".ColumnCount",
+      "description": [
+        "プロパティ 列数指定・取得 Formsクラスより",
+        "Any.ColumnCount = NUMBER",
+        "テーブルレイアウトの設定で使えるはず",
+      ]
+    },
+
+    "RowCount":{
+      "prefix": ".RowCount 行数指定・取得",
+      "body": ".RowCount",
+      "description": [
+        "プロパティ 行数指定・取得 Formsクラスより",
+        "Any.RowCount = NUMBER",
+        "テーブルレイアウトの設定で使えるはず",
+      ]
+    },
+
+    "TextAlign":{
+      "prefix": ".TextAlign テキストの位置設定・取得",
+      "body": ".TextAlign = ContentAlignment.$1;",
+      "description": [
+        "プロパティ テキストの位置設定・取得 Formsクラスより",
+        "Any.TextAlign = ContentAlignment.文字揃え位置; で設定できる",
+        "Top, Middle, Bottom と",
+        "Left, Center, Right の組み合わせで位置を設定"
+      ],
+    },
+
+    "BorderStyle":{
+      "prefix": ".BorderStyle 枠の設定・取得",
+      "body": ".BorderStyle = BorderStyle.$1;",
+      "description": [
+        "プロパティ テキストの枠の設定・取得 Formsクラスより",
+        "Any.BorderStyle = BorderStyle.枠種類; で設定できる",
+        "種類\nNome, FixedSingle, Fixed3D など",
+      ],
+    },
+
+    "ForeColor":{
+      "prefix": ".ForeColor 文字色の設定・取得",
+      "body": ".ForeColor = Color.$1;",
+      "description": [
+        "プロパティ 文字色の設定・取得 Formsクラスより",
+        "Any.ForeColor = Color.色; で設定できる",
+        "色は System.Drawing.Color 構造体 参照",
+      ]
+    },
+
+    "BackColor":{
+      "prefix": ".BackColor 背景色の設定・取得",
+      "body": ".BackColor = Color.$1;",
+      "description": [
+        "プロパティ 背景色の設定・取得 Formsクラスより",
+        "Any.BackColor = Color.色; で設定できる",
+        "色は System.Drawing.Color 構造体 参照",
+      ],
+    },
+
+    "Items":{
+      "prefix": "Items リストボックスのアイテムを取得する",
+      "body": ".Items",
+      "description": [
+        "プロパティ リストボックスのアイテムを取得する Formsクラスより",
+        "Any.Items.Add(要素);",
+      ]
+    },
+
+    "Checked":{
+      "prefix": ".Checked チェックの設定・取得",
+      "body": ".Checked",
+      "description": [
+        "プロパティ チェックの設定・取得 Formsクラス",
+        "Any.Checked = (または==) true/false で Any にチェックマークを設定できたりする",
+      ]
+    },
+
+    "DropDownItems":{
+      "prefix": "DropDownItems ドロップダウン項目の設定",
+      "body": ".DropDownItems",
+      "description": [
+        "プロパティ ドロップダウン項目の設定 Formsクラスより",
+        "Any.DropDownItems.Add(mi[n]); みたいに使える",
+        "MenuStrip 関係で使えるよ",
+      ],
+    },
+
+    "MainMenuStrip":{
+      "prefix": "MainMenuStrip メインメニューを設定する",
+      "body": ".MainMenuStrip",
+      "description": [
+        "プロパティ メインメニューを設定する Formsクラスより",
+        "フォーム.MainMenuStrip = メニューストリップ;",
+        "MenuStrip 関係で使えるよ",
+      ]
+    },
+
+    "Bitmap":{
+      "prefix": "Bitmap",
+      "body": "Bitmap(\"$1\");",
+      "description": [
+        "画像を1ピクセルづつ取得できる",
+        "Bitmap Any = new Bitmap(\"PATH \"); で画像を設定できる",
+      ]
+    },
+
+
+    "Enabled":{
+      "prefix": ".Enabled 利用判別",
+      "body": ".Enabled",
+      "description":[
+        "プロパティ 利用判別 Formsクラスより",
+        "Any.Enabled = true/false でAnyの利用が可能か不可能か設定できる",
+      ],
+    },
+
+    "Font":{
+      "prefix": ".Font フォント",
+      "body": ".Font = new Font(\"${1:FONTNAME}\", ${2:SIZE}, FontStyle.${3:STYLE});",
+        "description": [
+          "プロパティ フォント Formsクラスより",
+          "Any.Font = new Font(\"フォント名前\", 文字大きさ, FontStyle.スタイル);",
+          "で Any のフォントについて設定できる  ※全部入力する必要は無い",
+          "フォント名\n 明朝体:Serif, ゴシック体:SansSerif とか色々できるよ",
+          "フォントスタイル名\n レギュラー:Regular, 太字:Bold, イタリック:Italic, 下線:Underline, 取り消し線:Strikeout",
+      ],
+    },
+
+    "Next":{
+      "prefix": ".Next 乱数を生成する",
+      "body": ".Next($1);",
+      "description": [
+        "メソッド 乱数を生成する",
+        "Any.Next(NUMBER);",
+        "で 0 以上NUMBER未満の乱数になる",
+      ]
+    },
+
+    "ShowDialog":{
+      "prefix": ".ShowDialog モーダルとして表示する",
+      "body": ".ShowDialog",
+      "description": [
+        "メソッド モーダルとして表示する",
+        "Any.ShowDialog(); で Any をモーダルで表示できる",
+      ],
+    },
+
+
+
+    "Show":{
+      "prefix": ".Show モードレスとして表示する",
+      "body": ".Show();",
+      "description": [
+        "メソッド モードレスとして表示する",
+        "Any.Show(); で Any をモードレスで表示できる",
+      ],
+    },
+
+    "DrawImage":{
+      "prefix": ".DrawImage 指定位置に画像描写を行う Drawingシステムより",
+      "body": ".DrawImage(${IMAGENAME}, $X, $Y);",
+      "description": [
+        "メソッド 指定位置に画像描写を行う",
+        "Any.DrawImage(画像名, X座標, Y座標); で Any(Graphics) を指定座標に描写できる",
+      ],
+    },
+
+    "DrawImage(拡大)":{
+      "prefix": ".DrawImage 指定位置に画像描写を行う Drawingシステムより",
+      "body": ".DrawImage(${IMAGENAME}, $X, $Y, ${Width}, ${Height});",
+      "description": [
+        "メソッド 指定位置に画像描写を行う",
+        "Any.DrawImage(画像名, X座標, Y座標, 幅拡大率, 高さ拡大率); で Any(Graphics) を指定座標に描写できる",
+        "Width : なくてもいい",
+        "Height : なくてもいい",
+      ],
+    },
+
+    "RotateFlip":{
+      "prefix": ".RotateFlip 画像の回転・反転を行う Drawingシステムより",
+      "body": ".RotateFlip(RotateFlipType.Rotate${Arg}Flip${Axi});",
+      "description": [
+        "画像の回転・反転を行う",
+        "Any.RotateFlip(RotateFlipType.Rotate(角度)Flip(回転軸)); でAnyを回転・反転できる",
+        "Rotate : None, 90, 180, 270",
+        "Flip : None, X, XY, Y",
+      ],
+    },
+
+    "Invalidate":{
+      "prefix": ".Invalidate フォームの再描写を行う Formsシステムより",
+      "body": ".Invalidate();",
+      "description": [
+        "フォームの再描写を行う",
+        "Any.Invalidate(); で Any の再描写を行う",
+      ],
+    },
+
+
+    "Add":{
+      "prefix": ".Add アイテムを追加する Formsシステムより",
+      "body": ".Add($1);",
+      "description": [
+        "メソッド アイテムを追加する",
+        "Any.Items.Add(要素); とかに使えるよ"
+      ],
+    },
+
+    "Nodes":{
+      "prefix": ".Nodes ノードを設定する Formsシステムより",
+      "body": ".Nodes",
+      "description": [
+        "メソッド ノードを追加する",
+      ]
+    },
+
+    "GetPixel":{
+      "prefix": ".GetPixel 色を取得する Drawingシステムより",
+      "body": ".GetPixel($X, $Y);",
+      "description": [
+        "メソッド 色を取得する",
+        "Color c = Any.GetPixel(x座標, y座標); で c に Any の RGB を代入",
+        "対になるやつ .SetPixel(,,) RGB から Color を取得する",
+      ]
+    },
+
+    "SetPixel":{
+      "prefix": ".SetPixel 色を設定する Drawingシステムより",
+      "body": ".SetPixel($X, $Y, $RGBCODE);",
+      "description": [
+        "メソッド 色を設定する",
+        "Bitmap bm.SetPixel(x座標, y座標, RGB値); で bm の x,y に RGB を設定できる",
+        "対になるやつ .GetPixel(,) Color から RGB を取得する",
+      ]
+    },
+
+    "ToArgb":{
+      "prefix": ".ToArgb ColorからRGB値を取得する Drawingシステムより",
+      "body": ".ToArgb();",
+      "description": [
+        "メソッド Color から RGB を取得する",
+        "int i = Any.ToArgb();  で Any(Color) の RGB を i に取得できる",
+        "対になるやつ .FromArgb RGB値から Color を得る"
+      ]
+    },
+
+    "FromArgb":{
+      "prefix": ".FromArgb RGB 値から Color を取得する Drawingシステムより",
+      "body": ".FromArgb($1);",
+      "description": [
+        "メソッド RGB から Color を取得する",
+        "Color c = Color.FromArgb(Any); で Any の値を c に代入できる",
+        "対になるやつ .ToArgb Color 値から RGB を得る"
+      ]
+    },
+
+    "Math":{
+      "prefix": ".Math 算術系演算を行います",
+      "body": ".Math",
+      "description": [
+        "クラス 算術系演算を行えるようになる",
+        "Any.Math.算術系 で Anyに対して算術を行える",
+        "算術内容\nAbs():絶対値, Max(,):最大値, Min(,):最小値",
+        "Pow(,):累乗, Sqrt():平方根, 等々(調べろ)",
+        "Sin(), Cos(), Tan()もできるぞ"
+      ],
+    },
+
+    "Abs":{
+      "prefix": ".Abs 絶対値を取得します",
+      "body": ".Abs($1);",
+      "description": [
+        "メソッド 絶対値を取得します",
+        "Any.Math.Abs(NUMBER);",
+        "でNUMBERの絶対値を取得できる"
+      ],
+    },
+
+    "Max":{
+      "prefix": ".Max 最大値を取得します",
+      "body": ".Max($1,$2);",
+      "description": [
+        "メソッド 最大値を取得します",
+        "Any.Math.Max(NUMBER, DATE);",
+        "で前者と後者の大きい方を取得できる",
+      ],
+    },
+
+    "Min":{
+      "prefix": ".Min 最小値を取得します",
+      "body": ".Min($1,$2);",
+      "description": [
+        "メソッド 最小値を取得します",
+        "Any.Math.Min(NUMBER, DATA);",
+        "で前者と後者の小さい方を取得できる"
+      ],
+    },
+
+    "Pow":{
+      "prefix": ".Pow 累乗を取得します",
+      "body": ".Pow($1);",
+      "description": [
+        "メソッド 累乗を取得します",
+        "Any.Math.Pow(NUMBER, DATA);",
+        "でNUMBERのDATA乗を取得できる"
+      ],
+    },
+
+    "Sqrt":{
+      "prefix": ".Sqrt 平方根を取得します",
+      "body": ".Sqrt($1);",
+      "description": [
+        "メソッド を取得します",
+        "Any.Math.(NUMBER);",
+        "でNUMBERのを取得できる"
+      ],
+    },
+
+    "Sin":{
+      "prefix": ".Sin サインを取得します",
+      "body": ".Sin($1);",
+      "description": [
+        "メソッド サインを取得します",
+        "Any.Math.Sin(NUMBER);",
+        "でNUMBERのサインを取得できる"
+      ],
+    },
+
+    "Cos":{
+      "prefix": ".Cos コサインを取得します",
+      "body": ".Cos($1);",
+      "description": [
+        "メソッド コサインを取得します",
+        "Any.Math.Cos(NUMBER);",
+        "でNUMBERのコサインを取得できる"
+      ],
+    },
+
+    "Tan":{
+      "prefix": ".Tan タンジェントを取得します",
+      "body": ".Tan($1);",
+      "description": [
+        "メソッド タンジェントを取得します",
+        "Any.Math.Tan(NUMBER);",
+        "でNUMBER のタンジェントを取得できる",
+      ],
+    },
+
+    "Start":{
+      "prefix": ".Start タイマーを開始します",
+      "body": ".Start();",
+      "description": [
+        "メソッド タイマーを開始します",
+        "Any.Start(); でタイマーを開始できる",
+      ],
+    },
+
+    "Stop":{
+      "prefix": ".Stop タイマーを停止します",
+      "body": ".Stop();",
+      "description": [
+        "メソッド タイマーを停止します",
+        "Any.Stop(); でタイマーを停止できる"
+      ]
+    },
+
+    "Interval":{
+      "prefix": ".Interval  タイマーの間隔を設定する",
+      "body": ".Interval",
+      "description": [
+        "プロパティ タイマーの間隔を設定する",
+        "Any.Interval = NUMBER; でタイマーを NUMBER 間隔で設定できる(ミリ秒)",
+      ]
+    },
+
+    "ClientSize(単語)":{
+      "prefix": ".ClientSize ウィンドウの領域サイズを取得，設定する",
+      "body": ".ClientSize",
+      "description": [
+        "プロパティ ウィンドウ領域のサイズを取得，設定する",
+        "Any.ClientSize;  こんなんかなぁ...?",
+      ],
+    },
+
+    "GetFileName":{
+      "prefix": ".GetFileName ファイルまでの名前を取得する",
+      "body": ".GetFileName",
+      "description": [
+        "プロパティ ファイルまでの名前を取得する",
+        "Any.GetFileName で Any の名前を取得できる",
+      ]
+    },
+
+    "GetFullPath":{
+      "prefix": ".GetFullPath 絶対パスを取得する",
+      "body": ".GetFullPath(${FILENAME});",
+      "description": [
+        "メソッド 絶対パスを取得する",
+        "Path.GetFullPath(NAME);",
+        "で NAME の絶対パスを取得できる",
+      ]
+    },
+
+    "GetDirectories":{
+      "prefix": ".GetDirectories 子ディレクトリを取得する",
+      "body": ".GetDirectories(${DIRNAME});",
+      "description": [
+        "メソッド 子ディレクトリを取得する",
+        "string[] Any = Directory.GetDirectories(親ディレクトリ名);",
+        "でその子ディレクトリを取得できる"
+      ]
+    },
+
+    "Multiline":{
+      "prefix": ".Multiline テキストボックスで改行ができる",
+      "body": ".Multiline",
+      "description": [
+        "@@@@ テキストボックスで改行ができる",
+        "Any.Multiline = true/faulse; でAnyのテキストボックスで改行ができるようになる",
+      ]
+    },
+
+    "Filter":{
+      "prefix": ".Filter ファイル名フィルタを設定・取得する",
+      "body": ".Filter",
+      "description": [
+        "プロパティ ファイル名フィルタを設定・取得する",
+       "Any.FileDialog = ''|*.txt''  ",
+       "でAnyダイアログにおいてフィルタを掛けれる",
+       "空白には気を付けよう！",
+      ],
+    },
+
+    "ReadToEnd":{
+      "prefix": ".ReadToEnd 末尾まで読みとる",
+      "body": ".ReadToEnd",
+      "description": [
+        "プロパティ 末尾まで読み取る",
+        "TEXT = STREAM.ReadToEnd();",
+        "で TEXT に STREAM の末尾まで読み取る",
+      ],
+    },
+
+    "ToolTipText":{
+      "prefix": ".ToolTipText ツールチップテキストを設定する",
+      "body": ".ToolTipText",
+      "description": [
+        "プロパティ ツールチップテキストを設定する",
+        "TOOLSTRIPBUTTON.ToolTipText = \"Any\"",
+        "でTOOLSTRIPBUTTON のチップテキストをAny にできる",
+      ],
+    },
+
+    "SetColumnSpan":{
+      "prefix": ".SetColumnSpan テーブルレイアウトパネルの拡張結合を設定する",
+      "body": ".SetColumnSpan",
+      "description": [
+        "プロパティ テーブルレイアウトパネルの拡張結合を設定する",
+        "tlp.SetColumnSpan(載せるやつ, 幅の大きさ); で設定できる",
+        "ColumnCount = 2, RowCount = 3 のとき",
+        "SetColumnSpan(A, 1); SetColumnSpan(B, 1)",
+        "SetColumnSpan(C, 2); SetColumnSpan(D, 2)",
+        "A.Parent = flp; B.Parent = flp",
+        "D.Parent = flp; C.Parent = flp",
+        "A, B",
+        "D, D",
+        "C, C",
+        "でパネルが設定されているよ(但し右端で複数番を設定すると勝手に次の行から始まるよ)"
+      ],
+    },
+
+    "SelectionColor":{
+      "prefix": ".SelectionColor 選択されている箇所の色を設定/取得する",
+      "body": ".SelectionColor = Color.${COLOR};",
+      "description": [
+        "プロパティ 選択されている箇所の色を設定/取得する",
+        "リッチテキスト.SelectionColor = Color.Red; とかで色を指定できる",
+      ],
+    },
+
+    "Select":{
+      "prefix": ".Select 開始位置と長さを指定して選択する",
+      "body": ".Select(${1:Start}, ${2:Length});",
+      "description": [
+        "メソッド 開始位置と長さを指定して選択する",
+        "リッチテキスト.Select(開始位置, 長さ);",
+        "で選択範囲を指定できる",
+      ],
+    },
+
+    "GetHostName":{
+      "prefix": ".GetHostName ホスト名を返す",
+      "body": ".GetHostName();",
+      "description": [
+        "メソッド ホスト名を返す",
+        "string Any = Dns.GetHostName();",
+        "でAnyにホスト名を代入できる",
+      ],
+    },
+
+    "GetHostEntry":{
+      "prefix": ".GetHostEntry アドレスリストを取得する",
+      "body": ".GetHostEntry(${HOSTNAME});",
+      "description": [
+        "メソッド アドレスリストを取得する",
+        "IPHostEntry Any = Dns.GetHostEntry(ホスト名);",
+        "でIPアドレスをAnyに代入できる",
+      ],
+    },
+
+    "AddressList":{
+      "prefix": ".AddressList アドレスリストを取得する",
+      "body": ".AddressList[0];",
+      "description": [
+        "プロパティ アドレスリストを取得する",
+        "IPAddress Any = IPホストエントリー.AddressList[0];",
+        "でAnyにIPHostEntryのアドレスリストを代入できる",
+        "なんでこれだけ配列なんだ <-複数のIPを持つPCもあるかららしいです",
+      ]
+    },
+
+    "GetCurrentDirectory":{
+      "prefix": ".GetCurrentDirectory 作業ディレクトリを取得する",
+      "body": ".GetCurrentDirectory();",
+      "description": [
+        "なんか  作業ディレクトリを取得する",
+        "Directory.GetCurrentDirectory(); で設定できる",
+      ]
+    },
+
+    "Url":{
+      "prefix": ".Url URLページを開く",
+      "body": ".Url",
+      "description": [
+        "プロパティ URLページを開く",
+        "WEBBROWSER.Url = Any",
+        "でAnyのURLでブラウザを開くことができる"
+      ],
+    },
+
+    "GoBack":{
+      "prefix": "GoBack 前のページに戻る",
+      "body": ".GoBack()",
+      "description": [
+        "メソッド 前のページに戻る",
+        "WEBBROWSER.GoBack();",
+        "で戻れる"
+      ]
+    },
+
+    "CanGoBack":{
+      "prefix": ".CanGoBack 戻る履歴があるかを取得する",
+      "body": ".CanGoBack;",
+      "description": [
+        "プロパティ 戻る履歴があるかを取得する",
+        "WEBBROWSER.CanGoBack",
+        "これがTrueなら履歴があるんじゃね"
+      ],
+    },
+
+    "DoubleBuffered":{
+      "prefix": ".DoubleBuffered ダブルバッファを適応する",
+      "body": ".DoubleBuffered",
+      "description": [
+        "プロパティ ダブルバッファを適応する ",
+        "Any.DoubleBuffered = True/False; で設定できる "
+      ],
+    },
+}

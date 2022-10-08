@@ -1,0 +1,149 @@
+{
+  //ブラックボックス(怠慢)
+  "C_Cpp.updateChannel": "Insiders",
+  // "omnisharp.path": 2,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+
+  //Python でのインデントを4空白にする
+  "[python]": {
+    "editor.tabSize": 4,
+    // "editor.insertSpaces": false
+  },
+
+  "editor.formatOnType": true,//コードの整形
+
+  //古いpowershell
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" ,
+  "extensions.ignoreRecommendations": false,
+  //新しいpowershell
+  //"terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+  //文字コード
+  "terminal.integrated.shellArgs.windows": ["-NoExit","chcp 65001"],
+
+  //VScode のタイトルを変える
+  "window.title":"👻👻${dirty}${activeEditorShort}👻👻",
+
+  //キャレットが動く！
+  // "editor.cursorBlinking": "expand",
+  "editor.cursorBlinking":"phase",
+  // "editor.cursorSmoothCaretAnimation": true,
+
+  //余分な空白削除
+  "files.trimTrailingWhitespace": true,
+  // カーソル上にあるワードを"*"で検索(Vim)
+  "vim.visualstar": true,
+"vim.useSystemClipboard": true,
+
+  //vimrc読み込み
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "C:/Users/USERNAME/vimfiles/vsvimrc",
+  // "vim.vimrc.path": ["${env:USERPROFILE}\vsvimrc"],
+
+  //右のミニマップを正確に表示しないようにする
+  "editor.minimap.renderCharacters": false,
+
+  // "editor.renderControlCharacters": true, // 制御文字を表示する
+  // "editor.renderWhitespace": "boundary",  // 空白文字を表示する
+  "editor.minimap.maxColumn": 40,         // ミニマップの幅を40文字分に設定する
+  "files.autoGuessEncoding": true,       // 文字コードを自動的に判別する
+
+  //エディターの文字配色
+  "editor.tokenColorCustomizations": {
+    "comments": {
+      // "foreground": "#008800",
+      "fontStyle": "underline"
+     },
+    //  "functions": {
+    //    "foreground": "#000088",
+    //    "fontStyle": "bold"
+    //  },
+    // "keywords": "#888800",
+    // "numbers": "#000000",
+    //"strings": "#55AAAA",
+    "types": "#119daf",
+    "variables": "#c2439c" //"#a80677"
+  },
+
+  // テキストのフォント設定
+  "editor.fontFamily": "Cascadia Code PL",
+  "editor.fontLigatures": true,
+
+
+  /* Zenhanの設定  */
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "0",
+  //ラップトップCP版
+  // "vim.autoSwitchInputMethod.obtainIMCmd": "%HOMEPATH%\\AppData\\Roaming\\Code\\User\\zenhan\\bin64\\zenhan.exe 0",
+  // "vim.autoSwitchInputMethod.switchIMCmd": "%HOMEPATH%\\AppData\\Roaming\\Code\\User\\zenhan\\bin64\\zenhan.exe {im}",
+  //デスクトップPC版
+  "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\Users\\USERNAME\\AppData\\Roaming\\Code\\User\\zenhan\\bin64\\zenhan.exe 0",
+  "vim.autoSwitchInputMethod.switchIMCmd": "C:\\Users\\USERNAME\\AppData\\Roaming\\Code\\User\\zenhan\\bin64\\zenhan.exe {im}",
+
+  /* Code Spell Checkerのユーザー単語登録情報 */
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.statusBar.visible": true,
+  "editor.renderControlCharacters": false,
+  "cSpell.userWords": [
+    "argb",
+    "to",
+  ],
+  "workbench.startupEditor": "newUntitledFile",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "files.autoSaveDelay": 5000,
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "platex",
+      "tools": [
+        "platex",
+        "dvipdfmx"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "platex",
+      "command": "platex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-kanji=utf8",
+        "-shell-escape",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "dvipdfmx",
+      "command": "dvipdfmx",
+      "args": [
+        "%DOCFILE%.dvi"
+      ]
+    }
+  ],
+  "workbench.sideBar.location": "left",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6NDEzLFwiaGVpZ2h0XCI6MjkxfSxcInNlYXJjaFwiOnRydWUsXCJzaG93U3RhcnRTY3JlZW5cIjp0cnVlLFwiZ3JpZENvbG9yXCI6XCIjZDBkMGQwXCIsXCJkYXJrR3JpZENvbG9yXCI6XCIjNmU2ZTZlXCIsXCJhdXRvc2F2ZVwiOnRydWUsXCJyZXNpemVJbWFnZXNcIjpudWxsLFwib3BlbkNvdW50ZXJcIjowLFwidmVyc2lvblwiOjE4LFwidW5pdFwiOjEsXCJpc1J1bGVyT25cIjpmYWxzZSxcInVpXCI6XCJcIn0ifQ==",
+  "workbench.editor.untitled.hint": "hidden",
+  "terminal.integrated.tabs.enabled": true,
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.enabled": false,
+  "workbench.colorTheme": "2077",
+"editor.codeLensFontFamily": "Cascadia Code PL",
+"window.zoomLevel": 2,
+"editor.bracketPairColorization.enabled": true,
+"workbench.activityBar.visible": false,
+
+
+}
