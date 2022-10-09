@@ -122,6 +122,7 @@ format = """
 [$indicator]($style)\
 """
 fish_indicator = " fish"
+bash_indicator = " bash"
 powershell_indicator = "\uf17a posh"
 unknown_indicator = "??"
 disabled = false
