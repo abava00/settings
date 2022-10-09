@@ -1,14 +1,14 @@
-" settings
-" keymap
-" plugins
-" font
-" colorscheme
+"settings
+"map
+"plugins
+"font
+"colorscheme
 "~~~~~~~~~~~~~~~~~~~~~~
 
-" settings
+"settings
 "ターミナルでも256色使えるようにする
 set termguicolors
-" 256色
+"256色
 set t_Co=256
 "なにこれ
 au ColorScheme * hi Normal ctermbg=none
@@ -19,38 +19,37 @@ set encoding=utf-8
 source $VIMRUNTIME/delmenu.vim
 set langmenu=ja_jp.utf-8
 source $VIMRUNTIME/menu.vim
-" 編集中のファイルが変更されたら自動で読み直す
+"編集中のファイルが変更されたら自動で読み直す
 set autoread
-" バックアップファイルを作らない
+"バックアップファイルを作らない
 set nobackup
-" スワップファイルを作らない
+"スワップファイルを作らない
 set noswapfile
-" バッファが編集中でもその他のファイルを開けるように
+"バッファが編集中でもその他のファイルを開けるように
 set hidden
-" 入力中のコマンドをステータスに表示する
+"入力中のコマンドをステータスに表示する
 set showcmd
 "作業ディレクトリの自動移動
 set autochdir
 "クリップボードの有効化
-"set clipboard+=unnamed,autoselect "vim's setting
 set clipboard+=unnamedplus
-" 行番号を表示
+"行番号を表示
 set number
 "現在の行を強調表示 重くなるかもしれない
 set cursorline
-" 現在の列を強調表示
+"現在の列を強調表示
 "set cursorcolumn
-" 行末の1文字先までカーソルを移動できるように
+"行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
-" インデントはスマートインデント
+"インデントはスマートインデント
 set smartindent
-" ビープ音を可視化
+"ビープ音を可視化
 "set visualbell
 "ビープいらんでしょ
 set belloff=all
-" 括弧入力時の対応する括弧を協調表示
+"括弧入力時の対応する括弧を協調表示
 set showmatch
-" シンタックスハイライトの有効化
+"シンタックスハイライトの有効化
 syntax enable
 "￥を/に自動へんかんする
 set shellslash
@@ -58,13 +57,13 @@ set shellslash
 set wildmenu
 "Tabを押すとファイル名前が補完できる :e [name]とかで
 set wildmode=list,full
-" 不可視文字を可視化(タブが「?-」と表示される)
+"不可視文字を可視化(タブが「?-」と表示される)
 set list listchars=tab:\?\-
-" Tab文字を半角スペースにする
+"Tab文字を半角スペースにする
 set expandtab
-" 行頭以外のTab文字の表示幅（スペースいくつ分）
+"行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=2
-" 行頭でのTab文字の表示幅
+"行頭でのTab文字の表示幅
 set shiftwidth=2
 "バックスペース系のあれこれ
 "indent:オートオンデマンド機能によって挿入されたスペースを消せる(?)
@@ -73,42 +72,42 @@ set shiftwidth=2
 set backspace=indent,eol,start
 "ファイルタイプに基づいたインデントを有効化
 filetype plugin indent on
-" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
+"検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
-" 検索文字列に大文字が含まれている場合は区別して検索する
+"検索文字列に大文字が含まれている場合は区別して検索する
 set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
+"検索文字列入力時に順次対象文字列にヒットさせる
 set incsearch
-" 検索時に最後まで行ったら最初に戻る
+"検索時に最後まで行ったら最初に戻る
 set wrapscan
-" 検索語をハイライト表示
+"検索語をハイライト表示
 set hlsearch
 "カーソルの形を定義する
 if has('vim_starting')
-    " 挿入モード時に非点滅の縦棒タイプのカーソル
+    "挿入モード時に非点滅の縦棒タイプのカーソル
     let &t_SI .= "\e[6 q"
-    " ノーマルモード時に非点滅のブロックタイプのカーソル
+    "ノーマルモード時に非点滅のブロックタイプのカーソル
     let &t_EI .= "\e[2 q"
-    " 置換モード時に非点滅の下線タイプのカーソル
+    "置換モード時に非点滅の下線タイプのカーソル
     let &t_SR .= "\e[4 q"
 endif
 "補完してみようぜ的な？
 "nvim-cmpと競合したためOFF
-" set completeopt=menuone
-" for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
-"   exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
-" endfor
+"set completeopt=menuone
+"for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
+"  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
+"endfor
 "前回編集箇所から再開する
 augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
     \ exe "normal g`\"" | endif
     augroup END
 "永続undo有効化,ファイルごとにundodirを生成する
+set undofile
 if has('persistent_undo')
   set undodir=$MYVIMRC/../undodir
-  set undofile
 endif
-" jjとかの次入力までの猶予時間の短縮
+"jjとかの次入力までの猶予時間の短縮
 augroup timeout
   autocmd!
   autocmd InsertEnter * set timeoutlen=300
@@ -118,17 +117,17 @@ augroup timeout
   autocmd CmdlineEnter * set timeoutlen=300
   autocmd CmdlineLeave * set timeoutlen=1000
 augroup END
-" 利用シェルの変更
+"利用シェルの変更
 set sh=Powershell
 "コマンドラインの高さの変更 なんかチカチカする
 "set cmdheight=0
 "分割数が2以上ならばステータスラインを表示する 常に表示されてしまっている
 "set laststatus=0
-" python3認識
+"python3認識
 let g:python3_host_prog = system('echo -n $(which python3)')
-" settings end------------------------------------
+"settings end------------------------------------
 
-" keymap
+"keymap
 "jjでescを行うようにする
 inoremap <silent>jj <ESC>
 inoremap <silent>jk <ESC>
@@ -206,17 +205,17 @@ nnoremap \ :
 nnoremap <F12> :set relativenumber!<CR>
 "行末を折り返すかを切り替える
 nnoremap <F11> :set wrap!<CR>
-" 折り返し時に表示行単位での移動できるようにする
+"折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-" ESC連打でハイライト解除
+"ESC連打でハイライト解除
 nnoremap <silent><Esc><Esc> :nohlsearch<CR><Esc>
-" Tab文字の入力
+"Tab文字の入力
 inoremap <C-x> <c-v><Tab>
-" F1誤爆しても安心
+"F1誤爆しても安心
 noremap <F1> <ESC>
 inoremap <F1> <ESC>
-" 代わりにF2でカーソル下の単語についてヘルプを出す、すごい！
+"代わりにF2でカーソル下の単語についてヘルプを出す、すごい！
 function SophHelp()
   if &buftype=="help" && match( strpart( getline("."), col(".")-1,1), "\\S")<0
     bw
@@ -232,10 +231,21 @@ function SophHelp()
 endfunc
 nnoremap <silent> <F2> :call SophHelp()<CR>
 inoremap <F2> <Esc><F2>
-" keymap end------------------------------------
+"keymap end------------------------------------
 
-" plugins
-source $LOCALAPPDATA\\nvim-data\\vundle
+"plugins
+"プラグインマネージャー(Vundle.vim)とその設定ファイルの存在確認
+if globpath(&runtimepath, '*' . "*/Vundle.vim", 1) != ''
+  if has('win64') || has('win32')
+      if expand(glob('$LOCALAPPDATA\\vimfiles\\vundle')) != ""
+        source $LOCALAPPDATA\\nvim-data\\vundle
+      endif
+  elseif has('unix')
+    if expand(glob('$HOME/.vim/vundlerc')) != ""
+      source $HOME/.vim/vundlerc
+    endif
+  endif
+endif
 "TeXの設定
 "set concealcursor=""
 "let g:tex_flavor='platex'
@@ -255,7 +265,7 @@ let g:airline#extensions#whitespace#mixed_indent_algo=1
 if !exists('g:airline_symbols')
   let g:airline_symbols={}
 endif
-"" unicode symbols
+"unicode symbols
 let g:airline_left_sep='»'
 let g:airline_left_sep='▶'
 let g:airline_right_sep='«'
@@ -294,16 +304,16 @@ let g:airline_mode_map = {
   \ 'V'  : 'ぎょー選択',
   \ '' : 'くけー選択',
   \ } "は<c-v><c-v>で入力している
-" plugins end------------------------------------
+"plugins end------------------------------------
 
 
-" font
+"font
 "set guifont=Cica:h15
 "set guifontwide=Cica:h15
-" font end------------------------------------
+"font end------------------------------------
 
 
-" colorscheme
-"colorscheme nord
+"colorscheme
+" colorscheme nord
 colorscheme tender
-" colorscheme end------------------------------------
+"colorscheme end------------------------------------
