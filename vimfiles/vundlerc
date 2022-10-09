@@ -3,11 +3,11 @@ filetype off                  " required
 
 
 if has('win64') || has('win32')
-  set rtp+=$HOME\vimfiles\bundles\Vundle.vim
-  call vundle#begin('$HOME\vimfiles\bundles')
+  set rtp+=$HOME\vimfiles\bundle\Vundle.vim
+  call vundle#begin('$HOME\vimfiles\bundle')
 elseif has('unix')
-  set rtp+=$HOME/.vim/bundles/Vundle.vim
-  call vundle#begin('$HOME/.vim/bundles')
+  set rtp+=$HOME/.vim/bundle/Vundle.vim
+  call vundle#begin('$HOME/.vim/bundle')
 endif
 
 Plugin 'VundleVim/Vundle.vim'

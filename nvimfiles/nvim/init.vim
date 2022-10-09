@@ -103,10 +103,12 @@ augroup vimrcEx
     \ exe "normal g`\"" | endif
     augroup END
 "永続undo有効化,ファイルごとにundodirを生成する
-set undofile
 if has('persistent_undo')
-  set undodir=$MYVIMRC/../undodir
+  set undodir=$HOME/.config/nvim/undodir
+  set undofile
 endif
+
+"a
 "jjとかの次入力までの猶予時間の短縮
 augroup timeout
   autocmd!
@@ -118,7 +120,11 @@ augroup timeout
   autocmd CmdlineLeave * set timeoutlen=1000
 augroup END
 "利用シェルの変更
-set sh=Powershell
+if has('win64') || has('win32')
+  set sh=Powershell
+elseif has('unix')
+  set sh=bash
+endif
 "コマンドラインの高さの変更 なんかチカチカする
 "set cmdheight=0
 "分割数が2以上ならばステータスラインを表示する 常に表示されてしまっている
@@ -234,18 +240,16 @@ inoremap <F2> <Esc><F2>
 "keymap end------------------------------------
 
 "plugins
-"プラグインマネージャー(Vundle.vim)とその設定ファイルの存在確認
-if globpath(&runtimepath, '*' . "*/Vundle.vim", 1) != ''
-  if has('win64') || has('win32')
-      if expand(glob('$LOCALAPPDATA\\vimfiles\\vundle')) != ""
-        source $LOCALAPPDATA\\nvim-data\\vundle
-      endif
-  elseif has('unix')
-    if expand(glob('$HOME/.vim/vundlerc')) != ""
-      source $HOME/.vim/vundlerc
+if has('win64') || has('win32')
+    if expand(glob('$LOCALAPPDATA\\vimfiles\\plugrc')) != ""
+      source $LOCALAPPDATA\\nvim-data\\plugrc
     endif
+elseif has('unix')
+  if 1==1
+    source $HOME/.config/nvim/plugrc
   endif
 endif
+
 "TeXの設定
 "set concealcursor=""
 "let g:tex_flavor='platex'
@@ -315,5 +319,5 @@ let g:airline_mode_map = {
 
 "colorscheme
 " colorscheme nord
-colorscheme tender
+" colorscheme tender
 "colorscheme end------------------------------------
