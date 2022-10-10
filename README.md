@@ -18,9 +18,9 @@
   - 設定ファイル
 - setup
   - コマンド1つでセットアップが行われるファイルたちが置かれる(未実装)
-  - linu.sh
+  - linux.sh
 
-## 設定ファイル読み込み(Vim)
+## 設定ファイル読み込み
 
 none
 
@@ -30,4 +30,35 @@ none
 
 ### LINUX
 
-none
+このセットアップは、次のパッケージが導入されていることが前提に作られています。
+
+`
+curl  exa
+`
+
+
+#### このレポジトリをクローンする。
+
+```
+git clone https://github.com/abava00/settings
+cd settings/setup
+```
+
+#### ShellScriptを実行する。
+
+##### すべての設定をセットアップする場合
+```
+sh linux.sh
+```
+
+##### 特定の設定をセットアップする場合
+
+セットアップしたい対象の名前を入れる
+
+(複数の名前を引数に入れた場合は対応していません。)
+```
+sh linux.sh <vim/neovim/emacs/linux/starship>
+
+ex) sh linux.sh vim
+ex) sh linux.sh starship
+```

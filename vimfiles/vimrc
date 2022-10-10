@@ -139,12 +139,30 @@ inoremap <silent><A-k> <ESC>:bp<CR>i
 "inoremap ë <C-\><C-n>:bn<CR>i
 "vimrc の再起動
 nnoremap <Space>, :source $MYVIMRC<CR>
-"別バッファにターミナルを起動
-nnoremap <Space>bt :ene<CR>:terminal Powershell<CR><C-w><C-w>:q<CR><C-\><C-n>:bp<CR>:bd<CR>
-"ターミナルを起動させる(Powershell) 横
-noremap <Space>t  :bo terminal! ++rows=15 ++close Powershell<CR>
-"ターミナルを起動させる<(Powershell)縦
-noremap <Space>r  :vertical botright terminal! ++close Powershell<CR>
+
+"利用シェルの変更
+if has('win64') || has('win32')
+  set sh=Powershell
+elseif has('unix')
+  set sh=bash
+endif
+
+if has('win64') || has('win32')
+  "別バッファにターミナルを起動
+  "nnoremap <Space>bt :ene<CR>:terminal Powershell<CR><C-w><C-w>:q<CR><C-\><C-n>:bp<CR>:bd<CR>
+  "ターミナルを起動させる(Powershell) 横
+  noremap <Space>bt  :bo terminal! ++rows=15 ++close Powershell<CR>
+  "ターミナルを起動させる<(Powershell)縦
+  noremap <Space>br  :vertical botright terminal! ++close Powershell<CR>
+elseif has('unix')
+  "別バッファにターミナルを起動
+  "nnoremap <Space>bt :ene<CR>:terminal <CR><C-w><C-w>:q<CR><C-\><C-n>:bp<CR>:bd<CR>
+  "ターミナルを起動させる) 横
+  noremap <Space>bt  :bo terminal! ++rows=15 ++close <CR>
+  "ターミナルを起動させる<(Powershell)縦
+  noremap <Space>br  :vertical botright terminal! ++close <CR>
+endif
+
 "terminalでESCを押すとnormalモードになる
 tnoremap <ESC> <C-\><C-n>
 tnoremap <C-[> <C-\><C-n>
