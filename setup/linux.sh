@@ -65,8 +65,9 @@ starship () {
   ## install starship
   if type "curl"; then
     echo "install staship"
+    cd /tmp/
     curl -sS https://starship.rs/install.sh | sh
-    rm install.sh 
+    cd $workdir
   else
     echo "please install curl"
     exit 0
