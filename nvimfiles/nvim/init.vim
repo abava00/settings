@@ -133,7 +133,7 @@ endif
 let g:python3_host_prog = system('echo -n $(which python3)')
 "settings end------------------------------------
 
-"keymap
+"map
 "jjでescを行うようにする
 inoremap <silent>jj <ESC>
 inoremap <silent>jk <ESC>
@@ -206,7 +206,7 @@ nnoremap s] viw<ESC>bi[<ESC>ea]<ESC>
 nnoremap s< viw<ESC>bi<<ESC>ea><ESC>
 nnoremap s> viw<ESC>bi<<ESC>ea><ESC>
 "コロン・セミコロン問題に終止符
-nnoremap \ :
+" nnoremap \ :
 "行番号をF12で絶対表示と相対表示に切り替える ＊重くなるかもしれない
 nnoremap <F12> :set relativenumber!<CR>
 "行末を折り返すかを切り替える
