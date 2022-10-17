@@ -42,8 +42,8 @@ neovim_latest () {
   tar -vxzf nvim-linux64.tar.gz
   cd nvim-linux64
   ## put nvims lib and share file
-  echo "sudo cp nvim /usr/local/bin/nvim"
-  sudo cp bin/nvim /usr/local/bin/
+  echo "sudo cp nvim /usr/local/bin/nvim    and put file /usr/local/{lib, share}"
+  sudo cp -r bin/nvim-latest /usr/local/bin/nvim
   sudo cp -r lib/nvim /usr/local/lib/
   sudo cp -r share/* /usr/local/share/
   

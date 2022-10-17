@@ -1,0 +1,89 @@
+"my plugin setting
+"vimrc  $MYVIMRC
+
+call plug#begin()
+"プラグイン置き場-------------------------------------------------------
+Plug  'scrooloose/nerdtree'  "ディレクトリを見やすくするやつ
+Plug  'vim-jp/vimdoc-ja'  "ヘルプを日本語化する
+Plug  'pacificbelt30/exasterisk.vim'  "visualモードで選択した文字列を検索する
+Plug  'pacificbelt30/easyCO.vim'  "コメントアウト簡易化
+Plug  'Shougo/context_filetype.vim'  "の前提プラグイン
+Plug  'cohama/lexima.vim'  "括弧の補完
+Plug  'vim-airline/vim-airline'  "vim-airline
+Plug  'vim-airline/vim-airline-themes'  "それらのテーマ
+Plug  'ryanoasis/vim-devicons'  "vim-airlineでアイコンを表示する
+Plug  'thinca/vim-scouter'  "戦闘力計測 ジョーク 
+Plug  'folke/trouble.nvim'  "定義ジャンプとかのUIを提供
+Plug  'kyazdani42/nvim-web-devicons'  "上の前提プラグイン
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " 賢いハイライト
+Plug 'nvim-treesitter/nvim-treesitter-context' " treesitter 親となるクラスや関数を上部に表示する
+Plug 'p00f/nvim-ts-rainbow' " treesitter rainbow theses
+Plug 'haringsrob/nvim_context_vt' " treesitter クラスや関数の詳細を下部に表示
+Plug 'm-demare/hlargs.nvim' " treesitter 引数を色付け
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fzf
+Plug 'junegunn/fzf.vim' "ファジーファインダー
+Plug 'williamboman/mason.nvim' "lspサーバーを単一管理できるやつ
+Plug 'williamboman/mason-lspconfig.nvim'
+
+"カラースキーム
+Plug 'arcticicestudio/nord-vim' 
+Plug 'wadackel/vim-dogrun' 
+Plug 'cocopon/iceberg.vim' 
+Plug 'morhetz/gruvbox' 
+Plug 'jacoborus/tender.vim' 
+"-----------------
+"vim-cmpの設定
+Plug 'hrsh7th/nvim-cmp'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+"Plug 'hrsh7th/cmp-vsnip'
+"Plug 'hrsh7th/vim-vsnip'
+"Plug 'L3MON4D3/LuaSnip'
+"Plug 'saadparwaiz1/cmp_luasnip'
+"Plug 'SirVer/ultisnips'
+"Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+"Plug 'dcampos/nvim-snippy'
+"Plug 'dcampos/cmp-snippy'
+
+
+call plug#end()
+filetype plugin indent on
+syntax enable
+
+"プラグインの設定-------------------------------------------------------
+"NERDTree
+let NERDTreeShowHidden = 1
+nnoremap  <silent><Space>e :NERDTreeToggle<CR>
+
+"help
+set helplang=ja,en
+
+"vim-cmp
+set completeopt=menu,menuone,noselect
+
+"fzf
+nnoremap <Space>gf :FZF<CR>
+nnoremap <Space>gl :Lines<CR>
+nnoremap <Space>ph :History<CR>
+"command! -bang -nargs=? -complete=dir Files
+"    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '$LOCALAPPDATA/nvim-data/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
+
+"設定ここまで-------------------------------------------------
+
+" lua設定を記述しているファイルを全て読み込む
+if has('win64') || has('win32')
+  source $LOCALAPPDATA\\nvim-data\\plugin_settings\\hlargs
+  source $LOCALAPPDATA\\nvim-data\\plugin_settings\\mason
+  source $LOCALAPPDATA\\nvim-data\\plugin_settings\\nvim-cmp
+  source $LOCALAPPDATA\\nvim-data\\plugin_settings\\treesitter
+  source $LOCALAPPDATA\\nvim-data\\plugin_settings\\trouble
+elseif has('unix')
+  source $HOME/.config/nvim/plugged/hlargs
+  source $HOME/.config/nvim/plugged/mason
+  source $HOME/.config/nvim/plugged/nvim-cmp
+  source $HOME/.config/nvim/plugged/treesitter
+  source $HOME/.config/nvim/plugged/trouble
+endif
