@@ -64,8 +64,6 @@ neovim () {
   ln -iv ../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
   ln -iv ../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
   ln -iv ../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
-  ln -iv ../nvimfiles/nvim-data/plugged/nvim-cmp ~/.config/nvim/plugged/nvim-cmp
-  ln -iv ../nvimfiles/nvim-data/plugged/trouble ~/.config/nvim/plugged/trouble
   # add plugin manager
   if type "curl"; then
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -125,11 +123,13 @@ update () {
   elif type "emacs"; then
     ln -iv ../emacsfiles/.emacs.d/init.el ~/.emacs.d/init.el
   elif type "nvim"; then
-    ln -iv ../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
-    ln -iv ../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
-    ln -iv ../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
-    ln -iv ../nvimfiles/nvim-data/plugged/nvim-cmp ~/.config/nvim/plugged/nvim-cmp
-    ln -iv ../nvimfiles/nvim-data/plugged/trouble ~/.config/nvim/plugged/trouble
+    if [ -e "/usr/local/bin/nvim" ]; then
+      ln -iv ../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
+    elif
+      ln -iv ../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
+      ln -iv ../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
+      ln -iv ../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
+    fi
   elif type "starship"; then
     ln -iv ../starship/starship.toml ~/.config/starship/starship.toml
   fi
