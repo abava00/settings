@@ -28,14 +28,15 @@ emacs () {
 # neovim latest
 neovim_latest () {
   ## check installed nvim 
-  if type "nvim"; then
-    echo "please uninstall neovim"
-    exit 0 
-  fi
+  # if type "nvim"; then
+  #   echo "please uninstall neovim"
+  #   exit 0 
+  # fi
 
   ## add cunfigure in bashrc
   echo "# neovim config" >> ~/.bashrc 
   echo "export XDG_CONFIG_HOME=~/.config" >> ~/.bashrc 
+  echo "export VIMRUNTIME=/usr/local/share/nvim/nvim/runtime" >> ~/.bashrc
   ## donwload from github
   cd /tmp/
   wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz
@@ -43,9 +44,10 @@ neovim_latest () {
   cd nvim-linux64
   ## put nvims lib and share file
   echo "sudo cp nvim /usr/local/bin/nvim    and put file /usr/local/{lib, share}"
-  sudo cp -r bin/nvim-latest /usr/local/bin/nvim
+  sudo cp -r bin/nvim /usr/local/bin/nvim
   sudo cp -r lib/nvim /usr/local/lib/
-  sudo cp -r share/* /usr/local/share/
+  sudo mkdir /usr/local/share/nvim
+  sudo cp -r share/* /usr/local/share/nvim/
   
   cd $workdir
 }
@@ -174,6 +176,7 @@ elif [ $# -eq 1 ]; then
     "vim" ) vim ;;
     "starship" ) starship ;;
     "help" ) help ;;
+    "update" ) update ;;
   esac
 else
   echo "this scrip accepts only 0 or 1 arg"
