@@ -48,6 +48,29 @@ neovim_latest () {
   sudo cp -r lib/nvim /usr/local/lib/
   sudo mkdir /usr/local/share/nvim
   sudo cp -r share/* /usr/local/share/nvim/
+  ## return work dir
+  cd $workdir
+  # make nvim file
+  mkdir -p ~/.config/nvim/plugged
+  mkdir -p ~/.config/nvim/undodir
+  ## make configure hardlink
+  ln -iv ../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
+  ln -iv ../nvimfiles/nvim-latest/ginit.vim ~/.config/nvim/ginit.vim
+  ln -iv ../nvimfiles/nvim-latest/plugrc ~/.config/nvim/plugrc
+  ## make plugin hardlink
+  ln -iv ../nvimfiles/nvim-latest/plugged/hlargs	~/.config/nvim/plugged/hlargs 
+  ln -iv ../nvimfiles/nvim-latest/plugged/mason		~/.config/nvim/plugged/mason	 
+  ln -iv ../nvimfiles/nvim-latest/plugged/nvim-cmp	~/.config/nvim/plugged/nvim-cmp
+  ln -iv ../nvimfiles/nvim-latest/plugged/treesitter	~/.config/nvim/plugged/treesitter
+  ln -iv ../nvimfiles/nvim-latest/plugged/trouble	~/.config/nvim/plugged/trouble
+
+  # add plugin manager
+  if type "curl"; then
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  else
+    echo "please install curl"
+    exit 0
+  fi
   
   cd $workdir
 }
