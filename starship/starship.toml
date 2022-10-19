@@ -4,6 +4,10 @@
 # using font HackGen Nerd Console
 "$schema" = 'https://starship.rs/config-schema.json'
 
+
+scan_timeout = 3000
+command_timeout = 50000
+
 add_newline = false
 format = """
 [╭─](bold #b864f5)\
@@ -27,7 +31,8 @@ $shell\
 [\ue0b2](inverted bold fg:#0077c2)[\ue0b2](bold fg:#2e9599)\
 $time\
 [\ue0b4](bold fg:#2e9599)
-[╰─](#dcb7f7)$character\
+[╰─](#dcb7f7)\
+[](#7fffd4)$character\
 """
 
 [username]
