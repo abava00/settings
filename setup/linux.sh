@@ -125,7 +125,7 @@ update () {
   elif type "nvim"; then
     if [ -e "/usr/local/bin/nvim" ]; then
       ln -iv ../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
-    elif
+    else
       ln -iv ../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
       ln -iv ../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
       ln -iv ../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
