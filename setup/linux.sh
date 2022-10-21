@@ -36,7 +36,7 @@ neovim_latest () {
   ## add cunfigure in bashrc
   echo "# neovim config" >> ~/.bashrc 
   echo "export XDG_CONFIG_HOME=~/.config" >> ~/.bashrc 
-  echo "export VIMRUNTIME=/usr/local/share/nvim/nvim/runtime" >> ~/.bashrc
+  echo alias nim="export VIMRUNTIME=/usr/local/share/nvim/nvim/runtime; nvim" >> ~/.bashrc
   ## donwload from github
   cd /tmp/
   wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz
@@ -80,6 +80,7 @@ neovim () {
   # add cunfigure in bashrc
   echo "# neovim config" >> ~/.bashrc 
   echo "export XDG_CONFIG_HOME=~/.config" >> ~/.bashrc 
+  echo alias nim="nvim" >> ~/.bashrc
   # make nvim file
   mkdir -p ~/.config/nvim/plugged
   mkdir -p ~/.config/nvim/undodir
@@ -99,6 +100,8 @@ neovim () {
 
 # vim
 vim () {
+  ## add configuer
+  echo alias vim="export VIMRUNTIME=/usr/local/share/nvim/nvim/runtime; vim" >> ~/.bashrc
   ## make .vim file
   mkdir -p ~/.vim/plugin
   mkdir -p ~/.vim/undodir
