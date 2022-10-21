@@ -1,0 +1,139 @@
+# 参考にしたテーマ
+# https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/jandedobbeleer.omp.json
+
+# using font HackGen Nerd Console
+"$schema" = 'https://starship.rs/config-schema.json'
+
+
+scan_timeout = 3000
+command_timeout = 50000
+
+add_newline = false
+format = """
+[╭─](bold #b864f5)\
+[$username$hostname](bold bg:#b864f5 fg:#ffffff)\
+[](bold fg:#b864f5)[](inverted bold fg:#ff479c)\
+$directory\
+[](bold fg:#ff479c)[](inverted bold fg:#f57620)\
+$git_branch\
+$git_status\
+[](bold fg:#f57620 bg:#ffde57)\
+$python\
+[](bold fg:#ffde57 bg:#8AC75A)\
+$nodejs\
+[](bold fg:#8AC75A)
+[╰─](#dcb7f7)\
+[](#7fffd4)$character\
+"""
+
+[username]
+format = """
+[$user]($style)\
+"""
+style_user = "bold fg:#ffffff bg:#b864f5"
+style_root = "bold fg:#ff0000 bg:#a1f564"
+disabled = false
+show_always = true
+
+[hostname]
+format = """
+$ssh_symbol\
+"""
+ssh_only = false
+disabled = false
+
+[directory]
+format = """
+[$path](bold fg:#ffffff bg:#ff479c)\
+"""
+truncation_length = 0
+# truncation_symbol = "\uf115 /" # 省略されたフォルダのアイコン
+home_symbol = "\uf7db " # ホームフォルダのアイコン
+use_os_path_sep = false
+[directory.substitutions]
+"nvim" = "\uf27d "
+"vim" = "\ue7c5 "
+
+[git_branch]
+format = """
+[$symbol ≡ $branch]($style)\
+"""
+symbol = "\uf09b \uf126" # Gitレポジトリに入った時のアイコン
+style = "bold fg:#000000 bg:#f57620"
+
+[git_status]
+format = """
+[$all_status$ahead_behind]($style)\
+"""
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+conflicted = "|\uf024 "
+up_to_date = "|\uf00c "
+untracked = "|\uf756 ×${count}"
+stashed = "|\uf187 ×${count}"
+modified = "|\uf044 "
+deleted = "|\uf1f8 ×${count}"
+staged = '|++\($count\)'
+style = "bold fg:#eeeeee bg:#f57620"
+
+[python]
+format = """
+[$symbol $version]($style)\
+"""
+symbol = "\ue73C"
+style = "fg:#111111 bg:#FFDE57"
+
+[nodejs]
+format = """
+[$symbol $version]($style)\
+"""
+symbol = "\uf898"
+style = "fg:#111111 bg:#8AC75A"
+
+[cmd_duration]
+format = """
+[\ufbab$duration]($style)\
+"""
+style = "fg:#ffffff bg:#83769c"
+min_time = 0
+
+[status]
+format = """
+[$symbol]($style)\
+"""
+style = ""
+symbol = "[[\ue0b0](fg:#83769c bg:#e91e63) [\ue23a](fg:#ffffff bg:#e91e63) [\ue0b4](fg:#e91e63)](bold bg:#e91e63)"
+success_symbol = "[[\ue0b0](fg:#83769c bg:#00897b) [\ue23a](fg:#ffffff bg:#00897b) [\ue0b4](fg:#00897b)](bold bg:#00897b)"
+not_found_symbol = "[[\ue0b0](fg:#83769c bg:#d0af4c) [\uf128](fg:#ffffff bg:#d0af4c) [\ue0b4](fg:#d0af4c)](bold bg:#d0af4c)"
+disabled = false
+map_symbol = true
+recognize_signal_code = false
+
+[fill]
+symbol = " "
+
+
+[shell]
+format = """
+[$indicator]($style)\
+"""
+fish_indicator = " fish"
+bash_indicator = " bash"
+powershell_indicator = "\uf17a posh"
+unknown_indicator = "??"
+disabled = false
+style = "fg:#ffffff bg:#0077c2"
+
+[time]
+format = """
+[$time]($style)\
+"""
+style = "bold bg:#2e9599 fg:#111111"
+disabled = false
+
+
+[character]
+format = """
+[ ](bold)\
+"""
