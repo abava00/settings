@@ -11,7 +11,6 @@ command_timeout = 50000
 add_newline = false
 format = """
 [╭─](bold #b864f5)\
-[$username$hostname](bold bg:#b864f5 fg:#ffffff)\
 [](bold fg:#b864f5)[](inverted bold fg:#ff479c)\
 $directory\
 [](bold fg:#ff479c)[](inverted bold fg:#f57620)\
