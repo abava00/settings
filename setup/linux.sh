@@ -4,6 +4,7 @@
 arg=""
 workdir=$(cd $(dirname $0);pwd)
 cd $workdir
+echo $workdir
 
 
 # linux
@@ -21,7 +22,7 @@ linux () {
 
 # emacs
 emacs () {
-  ln -siv ../emacsfiles/.emacs.d/init.el ~/.emacs.d/init.el
+  ln -siv `pwd`/../emacsfiles/.emacs.d/init.el ~/.emacs.d/init.el
   cd $workdir
 }
 
@@ -36,7 +37,6 @@ neovim_latest () {
   ## add cunfigure in bashrc
   echo "# neovim config" >> ~/.bashrc 
   echo "export XDG_CONFIG_HOME=~/.config" >> ~/.bashrc 
-  echo alias nim="export VIMRUNTIME=/usr/local/share/nvim/nvim/runtime; nvim" >> ~/.bashrc
   ## donwload from github
   cd /tmp/
   wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz
@@ -44,25 +44,24 @@ neovim_latest () {
   cd nvim-linux64
   ## put nvims lib and share file
   echo "sudo cp nvim /usr/local/bin/nvim    and put file /usr/local/{lib, share}"
-  sudo cp -r bin/nvim /usr/local/bin/nvim
-  sudo cp -r lib/nvim /usr/local/lib/
-  sudo mkdir /usr/local/share/nvim
-  sudo cp -r share/* /usr/local/share/nvim/
+  sudo cp -r bin/* /usr/local/bin/nvim
+  sudo cp -r lib/* /usr/local/lib/
+  sudo cp -r share/* /usr/local/share/
   ## return work dir
   cd $workdir
   # make nvim file
   mkdir -p ~/.config/nvim/plugged
   mkdir -p ~/.config/nvim/undodir
-  ## make configure hardlink
-  ln -siv ../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
-  ln -siv ../nvimfiles/nvim-latest/ginit.vim ~/.config/nvim/ginit.vim
-  ln -siv ../nvimfiles/nvim-latest/plugrc ~/.config/nvim/plugrc
-  ## make plugin hardlink
-  ln -siv ../nvimfiles/nvim-latest/plugged/hlargs	~/.config/nvim/plugged/hlargs 
-  ln -siv ../nvimfiles/nvim-latest/plugged/mason		~/.config/nvim/plugged/mason	 
-  ln -siv ../nvimfiles/nvim-latest/plugged/nvim-cmp	~/.config/nvim/plugged/nvim-cmp
-  ln -siv ../nvimfiles/nvim-latest/plugged/treesitter	~/.config/nvim/plugged/treesitter
-  ln -siv ../nvimfiles/nvim-latest/plugged/trouble	~/.config/nvim/plugged/trouble
+  ## make configure symboliclink
+  ln -siv `pwd`/../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
+  ln -siv `pwd`/../nvimfiles/nvim-latest/ginit.vim ~/.config/nvim/ginit.vim
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugrc ~/.config/nvim/plugrc
+  ## make plugin symboliclink
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/hlargs	~/.config/nvim/plugged/hlargs 
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/mason		~/.config/nvim/plugged/mason
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/nvim-cmp	~/.config/nvim/plugged/nvim-cmp
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/treesitter	~/.config/nvim/plugged/treesitter
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/trouble	~/.config/nvim/plugged/trouble
 
   # add plugin manager
   if type "curl"; then
@@ -84,10 +83,10 @@ neovim () {
   # make nvim file
   mkdir -p ~/.config/nvim/plugged
   mkdir -p ~/.config/nvim/undodir
-  # make hardlink
-  ln -siv ../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
-  ln -siv ../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
-  ln -siv ../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
+  # make symboliclink
+  ln -siv `pwd`/../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
+  ln -siv `pwd`/../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
+  ln -siv `pwd`/../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
   # add plugin manager
   if type "curl"; then
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -100,16 +99,14 @@ neovim () {
 
 # vim
 vim () {
-  ## add configuer
-  echo alias vim="export VIMRUNTIME=/usr/local/share/nvim/nvim/runtime; vim" >> ~/.bashrc
   ## make .vim file
   mkdir -p ~/.vim/plugin
   mkdir -p ~/.vim/undodir
-  ## make hardlink
-  ln -siv ../vimfiles/vimrc ~/.vim/vimrc
-  ln -siv ../vimfiles/gvimrc ~/.vim/gvimrc
-  ln -siv ../vimfiles/vundlerc ~/.vim/vundlerc
-  ln -siv ../vimfiles/plugin/InThisWord.vim ~/.vim/plugin/InThisWord.vim
+  ## make symboliclink
+  ln -siv `pwd`/../vimfiles/vimrc ~/.vim/vimrc
+  ln -siv `pwd`/../vimfiles/gvimrc ~/.vim/gvimrc
+  ln -siv `pwd`/../vimfiles/vundlerc ~/.vim/vundlerc
+  ln -siv `pwd`/../vimfiles/plugin/InThisWord.vim ~/.vim/plugin/InThisWord.vim
   ## install plugin manager 
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   cd $workdir
@@ -129,8 +126,8 @@ starship () {
   fi
   ## make starship configure file
   mkdir -p ~/.config/starship
-  ## make hardlink
-  ln -siv ../starship/starship.toml ~/.config/starship/starship.toml
+  ## make symboliclink
+  ln -siv `pwd`/../starship/starship.toml ~/.config/starship/starship.toml
   ## add configuer in bashrc
   echo "# starship config" >> ~/.bashrc
   echo "eval \"\$(starship init bash)\"" >> ~/.bashrc
@@ -142,22 +139,22 @@ update () {
   cd $workdir
   echo "replace your setting files"
   if type "vim"; then
-    ln -siv ../vimfiles/vimrc ~/.vim/vimrc
-    ln -siv ../vimfiles/gvimrc ~/.vim/gvimrc
-    ln -siv ../vimfiles/vundlerc ~/.vim/vundlerc
-    ln -siv ../vimfiles/plugin/InThisWord.vim ~/.vim/plugin/InThisWord.vim
+    ln -siv `pwd`/../vimfiles/vimrc ~/.vim/vimrc
+    ln -siv `pwd`/../vimfiles/gvimrc ~/.vim/gvimrc
+    ln -siv `pwd`/../vimfiles/vundlerc ~/.vim/vundlerc
+    ln -siv `pwd`/../vimfiles/plugin/InThisWord.vim ~/.vim/plugin/InThisWord.vim
   elif type "emacs"; then
-    ln -siv ../emacsfiles/.emacs.d/init.el ~/.emacs.d/init.el
+    ln -siv `pwd`/../emacsfiles/.emacs.d/init.el ~/.emacs.d/init.el
   elif type "nvim"; then
     if [ -e "/usr/local/bin/nvim" ]; then
-      ln -siv ../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
+      ln -siv `pwd`/../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
     else
-      ln -siv ../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
-      ln -siv ../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
-      ln -siv ../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
+      ln -siv `pwd`/../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
+      ln -siv `pwd`/../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
+      ln -siv `pwd`/../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
     fi
   elif type "starship"; then
-    ln -siv ../starship/starship.toml ~/.config/starship/starship.toml
+    ln -siv `pwd`/../starship/starship.toml ~/.config/starship/starship.toml
   fi
   cd $workdir
 }
@@ -185,7 +182,7 @@ help () {
   echo "sh linux.sh vim"
   echo "sh linux.sh starship"
   echo ""
-  echo "sh linux.sh update    (replace newest setting hardlink file)"
+  echo "sh linux.sh update    (replace newest setting symboliclink file)"
 }
 
 # main
