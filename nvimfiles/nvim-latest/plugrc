@@ -3,7 +3,7 @@
 
 call plug#begin()
 "プラグイン置き場-------------------------------------------------------
-Plug 'scrooloose/nerdtree'  "ディレクトリを見やすくするやつ
+Plug 'abava00/nerdtree'  "ディレクトリを見やすくするやつ
 Plug 'vim-jp/vimdoc-ja'  "ヘルプを日本語化する
 Plug 'pacificbelt30/exasterisk.vim'  "visualモードで選択した文字列を検索する
 Plug 'pacificbelt30/easyCO.vim'  "コメントアウト簡易化

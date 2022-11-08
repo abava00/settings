@@ -127,6 +127,10 @@ endif
 set cmdheight=0
 "分割数が2以上ならばステータスラインを表示する 常に表示されてしまっている
 set laststatus=0
+"ポップアップの透明度
+set winblend=30
+set pumblend=20
+hi NormalFloat guifg=#2e3440 guibg=#a3be8c
 "python3認識
 let g:python3_host_prog = system('echo -n $(which python3)')
 "settings end------------------------------------
