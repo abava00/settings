@@ -21,7 +21,7 @@ linux () {
 
 # emacs
 emacs () {
-  ln -iv ../emacsfiles/.emacs.d/init.el ~/.emacs.d/init.el
+  ln -siv ../emacsfiles/.emacs.d/init.el ~/.emacs.d/init.el
   cd $workdir
 }
 
@@ -54,15 +54,15 @@ neovim_latest () {
   mkdir -p ~/.config/nvim/plugged
   mkdir -p ~/.config/nvim/undodir
   ## make configure hardlink
-  ln -iv ../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
-  ln -iv ../nvimfiles/nvim-latest/ginit.vim ~/.config/nvim/ginit.vim
-  ln -iv ../nvimfiles/nvim-latest/plugrc ~/.config/nvim/plugrc
+  ln -siv ../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
+  ln -siv ../nvimfiles/nvim-latest/ginit.vim ~/.config/nvim/ginit.vim
+  ln -siv ../nvimfiles/nvim-latest/plugrc ~/.config/nvim/plugrc
   ## make plugin hardlink
-  ln -iv ../nvimfiles/nvim-latest/plugged/hlargs	~/.config/nvim/plugged/hlargs 
-  ln -iv ../nvimfiles/nvim-latest/plugged/mason		~/.config/nvim/plugged/mason	 
-  ln -iv ../nvimfiles/nvim-latest/plugged/nvim-cmp	~/.config/nvim/plugged/nvim-cmp
-  ln -iv ../nvimfiles/nvim-latest/plugged/treesitter	~/.config/nvim/plugged/treesitter
-  ln -iv ../nvimfiles/nvim-latest/plugged/trouble	~/.config/nvim/plugged/trouble
+  ln -siv ../nvimfiles/nvim-latest/plugged/hlargs	~/.config/nvim/plugged/hlargs 
+  ln -siv ../nvimfiles/nvim-latest/plugged/mason		~/.config/nvim/plugged/mason	 
+  ln -siv ../nvimfiles/nvim-latest/plugged/nvim-cmp	~/.config/nvim/plugged/nvim-cmp
+  ln -siv ../nvimfiles/nvim-latest/plugged/treesitter	~/.config/nvim/plugged/treesitter
+  ln -siv ../nvimfiles/nvim-latest/plugged/trouble	~/.config/nvim/plugged/trouble
 
   # add plugin manager
   if type "curl"; then
@@ -85,9 +85,9 @@ neovim () {
   mkdir -p ~/.config/nvim/plugged
   mkdir -p ~/.config/nvim/undodir
   # make hardlink
-  ln -iv ../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
-  ln -iv ../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
-  ln -iv ../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
+  ln -siv ../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
+  ln -siv ../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
+  ln -siv ../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
   # add plugin manager
   if type "curl"; then
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -106,10 +106,10 @@ vim () {
   mkdir -p ~/.vim/plugin
   mkdir -p ~/.vim/undodir
   ## make hardlink
-  ln -iv ../vimfiles/vimrc ~/.vim/vimrc
-  ln -iv ../vimfiles/gvimrc ~/.vim/gvimrc
-  ln -iv ../vimfiles/vundlerc ~/.vim/vundlerc
-  ln -iv ../vimfiles/plugin/InThisWord.vim ~/.vim/plugin/InThisWord.vim
+  ln -siv ../vimfiles/vimrc ~/.vim/vimrc
+  ln -siv ../vimfiles/gvimrc ~/.vim/gvimrc
+  ln -siv ../vimfiles/vundlerc ~/.vim/vundlerc
+  ln -siv ../vimfiles/plugin/InThisWord.vim ~/.vim/plugin/InThisWord.vim
   ## install plugin manager 
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   cd $workdir
@@ -130,7 +130,7 @@ starship () {
   ## make starship configure file
   mkdir -p ~/.config/starship
   ## make hardlink
-  ln -iv ../starship/starship.toml ~/.config/starship/starship.toml
+  ln -siv ../starship/starship.toml ~/.config/starship/starship.toml
   ## add configuer in bashrc
   echo "# starship config" >> ~/.bashrc
   echo "eval \"\$(starship init bash)\"" >> ~/.bashrc
@@ -142,22 +142,22 @@ update () {
   cd $workdir
   echo "replace your setting files"
   if type "vim"; then
-    ln -iv ../vimfiles/vimrc ~/.vim/vimrc
-    ln -iv ../vimfiles/gvimrc ~/.vim/gvimrc
-    ln -iv ../vimfiles/vundlerc ~/.vim/vundlerc
-    ln -iv ../vimfiles/plugin/InThisWord.vim ~/.vim/plugin/InThisWord.vim
+    ln -siv ../vimfiles/vimrc ~/.vim/vimrc
+    ln -siv ../vimfiles/gvimrc ~/.vim/gvimrc
+    ln -siv ../vimfiles/vundlerc ~/.vim/vundlerc
+    ln -siv ../vimfiles/plugin/InThisWord.vim ~/.vim/plugin/InThisWord.vim
   elif type "emacs"; then
-    ln -iv ../emacsfiles/.emacs.d/init.el ~/.emacs.d/init.el
+    ln -siv ../emacsfiles/.emacs.d/init.el ~/.emacs.d/init.el
   elif type "nvim"; then
     if [ -e "/usr/local/bin/nvim" ]; then
-      ln -iv ../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
+      ln -siv ../nvimfiles/nvim-latest/init.vim ~/.config/nvim/init.vim
     else
-      ln -iv ../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
-      ln -iv ../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
-      ln -iv ../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
+      ln -siv ../nvimfiles/nvim/init.vim ~/.config/nvim/init.vim
+      ln -siv ../nvimfiles/nvim/ginit.vim ~/.config/nvim/ginit.vim
+      ln -siv ../nvimfiles/nvim-data/plugrc ~/.config/nvim/plugrc
     fi
   elif type "starship"; then
-    ln -iv ../starship/starship.toml ~/.config/starship/starship.toml
+    ln -siv ../starship/starship.toml ~/.config/starship/starship.toml
   fi
   cd $workdir
 }
