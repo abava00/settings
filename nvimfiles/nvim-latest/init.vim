@@ -129,8 +129,7 @@ set cmdheight=0
 set laststatus=0
 "ポップアップの透明度
 set winblend=30
-set pumblend=20
-hi NormalFloat guifg=#2e3440 guibg=#a3be8c
+set pumblend=30
 "python3認識
 let g:python3_host_prog = system('echo -n $(which python3)')
 "settings end------------------------------------
@@ -321,5 +320,5 @@ let g:airline_mode_map = {
 
 "colorscheme
 " colorscheme nord
-" colorscheme tender
+colorscheme tender
 "colorscheme end------------------------------------
