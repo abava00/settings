@@ -126,9 +126,9 @@ elseif has('unix')
   set sh=bash
 endif
 "コマンドラインの高さの変更 なんかチカチカする
-"set cmdheight=0
+set cmdheight=0
 "分割数が2以上ならばステータスラインを表示する 常に表示されてしまっている
-"set laststatus=0
+set laststatus=0
 "python3認識
 let g:python3_host_prog = system('echo -n $(which python3)')
 "settings end------------------------------------
