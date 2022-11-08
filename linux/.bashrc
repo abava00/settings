@@ -10,4 +10,4 @@ alias la="ls -a"
 
 # .inputrc に色々書くと補完の方法が変わる(centOS)
 # ubuntuなら.inputrcに書かなくてもよさそう(ubuntu)
-bind TAB:menu-complete 
+#bind TAB:menu-complete

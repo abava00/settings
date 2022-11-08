@@ -37,6 +37,7 @@ neovim_latest () {
   ## add cunfigure in bashrc
   echo "# neovim config" >> ~/.bashrc 
   echo "export XDG_CONFIG_HOME=~/.config" >> ~/.bashrc 
+  echo "#alias vim=\"nvim\"" >> ~/.bashrc
   ## donwload from github
   cd /tmp/
   wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz
@@ -57,11 +58,11 @@ neovim_latest () {
   ln -siv `pwd`/../nvimfiles/nvim-latest/ginit.vim ~/.config/nvim/ginit.vim
   ln -siv `pwd`/../nvimfiles/nvim-latest/plugrc ~/.config/nvim/plugrc
   ## make plugin symboliclink
-  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/hlargs	~/.config/nvim/plugged/hlargs 
-  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/mason		~/.config/nvim/plugged/mason
-  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/nvim-cmp	~/.config/nvim/plugged/nvim-cmp
-  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/treesitter	~/.config/nvim/plugged/treesitter
-  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/trouble	~/.config/nvim/plugged/trouble
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/hlargs ~/.config/nvim/plugged/hlargs
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/mason ~/.config/nvim/plugged/mason
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/nvim-cmp ~/.config/nvim/plugged/nvim-cmp
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/treesitter ~/.config/nvim/plugged/treesitter
+  ln -siv `pwd`/../nvimfiles/nvim-latest/plugged/trouble ~/.config/nvim/plugged/trouble
 
   # add plugin manager
   if type "curl"; then
@@ -79,7 +80,7 @@ neovim () {
   # add cunfigure in bashrc
   echo "# neovim config" >> ~/.bashrc 
   echo "export XDG_CONFIG_HOME=~/.config" >> ~/.bashrc 
-  echo alias nim="nvim" >> ~/.bashrc
+  echo "#alias vim=\"nvim\"" >> ~/.bashrc
   # make nvim file
   mkdir -p ~/.config/nvim/plugged
   mkdir -p ~/.config/nvim/undodir
