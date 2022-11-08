@@ -108,7 +108,7 @@ if has('persistent_undo')
   set undofile
 endif
 
-"a
+"map
 "jjとかの次入力までの猶予時間の短縮
 augroup timeout
   autocmd!
