@@ -107,8 +107,6 @@ if has('persistent_undo')
   set undodir=$HOME/.config/nvim/undodir
   set undofile
 endif
-
-"map
 "jjとかの次入力までの猶予時間の短縮
 augroup timeout
   autocmd!
