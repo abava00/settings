@@ -128,7 +128,7 @@ set cmdheight=0
 "分割数が2以上ならばステータスラインを表示する 常に表示されてしまっている
 set laststatus=0
 "ポップアップの透明度
-set winblend=30
+" set winblend=30
 set pumblend=30
 "python3認識
 let g:python3_host_prog = system('echo -n $(which python3)')
@@ -215,6 +215,8 @@ nnoremap <F11> :set wrap!<CR>
 "折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 "ESC連打でハイライト解除
 nnoremap <silent><Esc><Esc> :nohlsearch<CR><Esc>
 "Tab文字の入力
@@ -238,7 +240,9 @@ function SophHelp()
 endfunc
 nnoremap <silent> <F2> :call SophHelp()<CR>
 inoremap <F2> <Esc><F2>
-"keymap end------------------------------------
+nnoremap gf gF
+nnoremap gF gf
+"map end------------------------------------
 
 "plugins
 if has('win64') || has('win32')
@@ -320,5 +324,6 @@ let g:airline_mode_map = {
 
 "colorscheme
 " colorscheme nord
-colorscheme tender
+" colorscheme tender
+colorscheme lunaperche
 "colorscheme end------------------------------------
