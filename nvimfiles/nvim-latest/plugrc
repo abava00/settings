@@ -72,6 +72,7 @@ set completeopt=menu,menuone,noselect
 nnoremap <Space>gf :FZF<CR>
 nnoremap <Space>gl :Lines<CR>
 nnoremap <Space>gh :History<CR>
+nnoremap <Space>gg :GitFiles<CR>
 nnoremap ? :Rg<CR>
 autocmd FileType fzf tnoremap <buffer> <Esc> <C-\><C-n>:q<CR>
 "プロジェクトファイルをルートとして見てくれるらしい？
