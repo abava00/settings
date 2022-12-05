@@ -38,6 +38,7 @@ neovim_latest () {
   echo "# neovim config" >> ~/.bashrc 
   echo "export XDG_CONFIG_HOME=~/.config" >> ~/.bashrc 
   echo "#alias vim=\"nvim\"" >> ~/.bashrc
+  echo "#alias view=\"vim -R\"" >> ~/.bashrc
   ## donwload from github
   cd /tmp/
   wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz
@@ -81,6 +82,7 @@ neovim () {
   echo "# neovim config" >> ~/.bashrc 
   echo "export XDG_CONFIG_HOME=~/.config" >> ~/.bashrc 
   echo "#alias vim=\"nvim\"" >> ~/.bashrc
+  echo "#alias view=\"vim -R\"" >> ~/.bashrc
   # make nvim file
   mkdir -p ~/.config/nvim/plugged
   mkdir -p ~/.config/nvim/undodir
