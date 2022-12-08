@@ -1,0 +1,9 @@
+# ファイルの補完方法
+set completion-ignore-case on
+TAB: menu-complete
+# 端末ベルの音を無効化
+set bell-style none
+# チルダ( ~ ) を展開する
+set expand-tilde on
+# cdとかでファイル名が表示されるときに色を付ける
+set colored-stats on

@@ -7,12 +7,12 @@ cd $workdir
 echo $workdir
 
 
-# linux
-linux () {
+# bash
+bash () {
   # add coufigure in bashrc
   if type "exa"; then
     echo "# Tab:menu-complete settting(Ubuntu?)" >> ~/.bashrc
-    cat ../linux/.bashrc >> ~/.bashrc
+    cat ../bash/.bashrc >> ~/.bashrc
   else
     echo "please install exa"
     exit 0
@@ -165,7 +165,7 @@ update () {
 
 # all
 all () {
-  linux
+  bash
   emacs
   neovim
   neovim_latest
@@ -178,7 +178,7 @@ help () {
   echo "this script is follow these option"
   echo ""
   echo "sh linux.sh all"
-  echo "sh linux.sh linux"
+  echo "sh linux.sh bash"
   echo "sh linux.sh emacs"
   echo "sh linux.sh neovim"
   echo "sh linux.sh neovim_latest   (v0.8.0)"
@@ -195,7 +195,7 @@ if [ $# -eq 0 ]; then
 elif [ $# -eq 1 ]; then
   case $1 in
     "all" ) all ;;
-    "linux" ) linux ;;
+    "bash" ) bash ;;
     "emacs" ) emacs ;;
     "neovim" ) neovim ;;
     "neovim_latest" ) neovim_latest ;;
