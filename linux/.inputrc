@@ -1,2 +1,5 @@
+# ファイルの補完方法
 set completion-ignore-case on
 TAB: menu-complete
+
+# 端末ベルの音を無効化
