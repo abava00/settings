@@ -96,11 +96,11 @@ endif
 
 " lua設定を記述しているファイルを全て読み込む
 if has('win64') || has('win32')
-  source $LOCALAPPDATA\\nvim-data\\plugin_settings\\hlargs
-  source $LOCALAPPDATA\\nvim-data\\plugin_settings\\mason
-  source $LOCALAPPDATA\\nvim-data\\plugin_settings\\nvim-cmp
-  source $LOCALAPPDATA\\nvim-data\\plugin_settings\\treesitter
-  source $LOCALAPPDATA\\nvim-data\\plugin_settings\\trouble
+  source $LOCALAPPDATA\\nvim\\plugin_settings\\hlargs
+  source $LOCALAPPDATA\\nvim\\plugin_settings\\mason
+  source $LOCALAPPDATA\\nvim\\plugin_settings\\nvim-cmp
+  source $LOCALAPPDATA\\nvim\\plugin_settings\\treesitter
+  source $LOCALAPPDATA\\nvim\\plugin_settings\\trouble
 elseif has('unix')
   source $HOME/.config/nvim/plugged/hlargs
   source $HOME/.config/nvim/plugged/mason

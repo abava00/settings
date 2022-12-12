@@ -246,8 +246,8 @@ nnoremap gF gf
 
 "plugins
 if has('win64') || has('win32')
-    if expand(glob('$LOCALAPPDATA\\vimfiles\\plugrc')) != ""
-      source $LOCALAPPDATA\\nvim-data\\plugrc
+    if expand(glob('$LOCALAPPDATA\\nvim\\plugrc')) != ""
+      source $LOCALAPPDATA\\nvim\\plugrc
     endif
 elseif has('unix')
   if 1==1

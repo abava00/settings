@@ -7,6 +7,7 @@ rem set root dir
 rem  C:%HOMEPATH%\aaaa       C:\Users\NAME\aaaa
 set rootdir="C:%HOMEPATH%"
 
+
 echo "多分管理者権限が必要になるかも"
 echo "choice setting"
 echo "a : all"
@@ -15,6 +16,8 @@ echo "v : vim"
 echo "s : starship"
 echo "h : help"
 echo "u : update"
+
+echo %TEMP%
 
 choice /CS /C  anvshu
 
@@ -25,8 +28,10 @@ if %errorlevel% == 1 (
   exit /b
 )
 if %errorlevel% == 2 (
-  rem neovim
+  echo neovim setup
+  call:func_neovim
   echo done!
+  exit /b
 )
 if %errorlevel% == 3 (
   echo vim setup
@@ -58,6 +63,23 @@ if %errorlevel% == 6 (
 exit /b
 
 :func_neovim
+  cd /D %work%
+
+  rem make nvim dir
+  mkdir %LOCALAPPDATA%\nvim\
+  mkdir %LOCALAPPDATA%\nvim\plugin_settings\
+  rem copy nvim config file
+  copy ..\nvimfiles\nvim-latest\init.vim %LOCALAPPDATA%\nvim\init.vim
+  copy ..\nvimfiles\nvim-latest\ginit.vim %LOCALAPPDATA%\nvim\ginit.vim
+  copy ..\nvimfiles\nvim-latest\plugrc %LOCALAPPDATA%\nvim\plugrc
+  copy ..\nvimfiles\nvim-latest\plugged %LOCALAPPDATA%\nvim\plugin_settings
+
+  rem add plugin manager
+  rem iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
+
+  curl.exe -fLo %LOCALAPPDATA%\nvim\autoload\plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
 exit /b
 
 :func_vim
