@@ -67,47 +67,55 @@ exit /b
 
   rem make nvim dir
   mkdir %LOCALAPPDATA%\nvim\
+  mkdir %LOCALAPPDATA%\undodir\
   mkdir %LOCALAPPDATA%\nvim\plugin_settings\
   rem copy nvim config file
-  copy ..\nvimfiles\nvim-latest\init.vim %LOCALAPPDATA%\nvim\init.vim
-  copy ..\nvimfiles\nvim-latest\ginit.vim %LOCALAPPDATA%\nvim\ginit.vim
-  copy ..\nvimfiles\nvim-latest\plugrc %LOCALAPPDATA%\nvim\plugrc
-  copy ..\nvimfiles\nvim-latest\plugged %LOCALAPPDATA%\nvim\plugin_settings
+  copy ..\nvimfiles\nvim-latest\init.vim	%LOCALAPPDATA%\nvim\init.vim
+  copy ..\nvimfiles\nvim-latest\ginit.vim	%LOCALAPPDATA%\nvim\ginit.vim
+  copy ..\nvimfiles\nvim-latest\plugrc		%LOCALAPPDATA%\nvim\plugrc
+  copy ..\nvimfiles\nvim-latest\plugged		%LOCALAPPDATA%\nvim\plugin_settings
 
   rem add plugin manager
-  rem iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
-
   curl.exe -fLo %LOCALAPPDATA%\nvim\autoload\plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+  rem neovim alias
+  mkdir %userprofile%\Documents\Powershell
+  echo ..\nvimfiles\nvim-latest\Microsoft.PowerShell_profile.ps1 >> %userprofile%\Documents\Powershell\Microsoft.PowerShell_profile.ps1
+  
 
+  cd /D %work%
 exit /b
 
 :func_vim
   cd /D %work%
 
-  rem make vim file
-  mkdir %rootdir%\nvimfiles
-  mkdir %rootdir%\nvimfiles\plugin
-  mkdir %rootdir%\nvimfiles\undodir
-  
-  rem make hardlink    mklink /H  lnk ..\vimfiles\origin
-  rem Mabye, we can make hardlink when we exist in C drive
-  rem if drive = C:
-rem   mklink /H %rootdir%\nvimfiles\vimrc                 ..\vimfiles\vimrc
-rem   mklink /H %rootdir%\nvimfiles\gvimrc                ..\vimfiles\gvimrc
-rem   mklink /H %rootdir%\nvimfiles\vundlerc              ..\vimfiles\vundlerc
-rem   mklink /H %rootdir%\nvimfiles\plugin\InThisWord.vim ..\vimfiles\plugin\InThisWord.vim
-  rem when we in other drive make copy file,
-  rem else:
-rem   copy ..\vimfiles\vimrc                  %rootdir%\nvimfiles\vimrc                
-rem   copy ..\vimfiles\gvimrc                 %rootdir%\nvimfiles\gvimrc               
-rem   copy ..\vimfiles\vundlerc               %rootdir%\nvimfiles\vundlerc             
-rem   copy ..\vimfiles\plugin\InThisWord.vim  %rootdir%\nvimfiles\plugin\InThisWord.vim
+  rem make vim dir
+  mkdir %rootdir%\vimfiles
+  mkdir %rootdir%\vimfiles\plugin
+  mkdir %rootdir%\vimfiles\undodir
+  rem copy vim config file
+  copy ..\vimfiles\vimrc									%rootdir%\vimfiles\vimrc                
+  copy ..\vimfiles\gvimrc									%rootdir%\vimfiles\gvimrc               
+  copy ..\vimfiles\vundlerc								%rootdir%\vimfiles\vundlerc             
+  copy ..\vimfiles\plugin\InThisWord.vim	%rootdir%\vimfiles\plugin\InThisWord.vim
+
+  rem install plugin manager 
+  git clone https://github.com/VundleVim/Vundle.vim.git %rootdir%\vimfiels\bundle\Vundle.vim
   
   cd /D %work%
 exit /b
 
 :func_starship
+  cd /D %work%
+
+  rem install starship
+  winget install starship
+
+  rem write powershell setting
+  mkdir %userprofile%\Documents\Powershell
+  echo ..\starship\Microsoft.PowerShell_profile.ps1 >> %userprofile%\Documents\Powershell\Microsoft.PowerShell_profile.ps1
+
+  cd /D %work%
 exit /b
 
 :func_help
@@ -115,3 +123,4 @@ exit /b
 
 :func_update
 exit /b
+
