@@ -104,8 +104,13 @@ augroup vimrcEx
     augroup END
 "永続undo有効化,ファイルごとにundodirを生成する
 if has('persistent_undo')
-  set undodir=$HOME/.config/nvim/undodir
-  set undofile
+  if has('win64') || has('win32')
+    set undodir=$LOCALAPPDATA/nvim/undodir 
+    set undofile
+  elseif has('unix')
+    set undodir=$HOME/.config/nvim/undodir
+    set undofile
+  endif
 endif
 "jjとかの次入力までの猶予時間の短縮
 augroup timeout
