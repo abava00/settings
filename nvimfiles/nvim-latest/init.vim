@@ -126,7 +126,7 @@ augroup END
 if has('win64') || has('win32')
   set sh=Powershell
 elseif has('unix')
-  set sh=bash
+  set sh=$SHELL
 endif
 "コマンドラインの高さの変更 なんかチカチカする
 set cmdheight=0
@@ -137,6 +137,22 @@ set winblend=40
 set pumblend=30
 "python3認識
 let g:python3_host_prog = system('echo -n $(which python3)')
+"折りたたみ嫌いなのよね
+set nofoldenable
+"fcitx5-mozcの入力メソッド自動切り替え
+if has('unix')
+  "https://wiki.archlinuxcn.org/wiki/Fcitx?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DFcitx_%28%25E7%25AE%2580%25E4%25BD%2593%25E4%25B8%25AD%25E6%2596%2587%29%26redirect%3Dno#vim
+  let g:input_toggle = 1
+  function! Fcitx2en()
+    let s:input_status = system("fcitx5-remote")
+    if s:input_status == 2
+      let g:input_toggle = 1
+      let l:a = system("fcitx5-remote -c")
+    endif
+  endfunction
+  set ttimeoutlen=150
+  autocmd InsertLeave * call Fcitx2en()
+endif 
 "settings end------------------------------------
 
 "map

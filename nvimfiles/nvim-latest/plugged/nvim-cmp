@@ -99,5 +99,9 @@ lua <<EOF
     -- c lsp
     capabilities = capabilities
   }
+  require('lspconfig')['texlab'].setup {
+    -- LaTeX lsp
+    capabilities = capabilities
+  }
 
 EOF
