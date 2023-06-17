@@ -129,9 +129,9 @@ elseif has('unix')
   set sh=$SHELL
 endif
 "コマンドラインの高さの変更 なんかチカチカする
-set cmdheight=0
+"set cmdheight=0
 "分割数が2以上ならばステータスラインを表示する 常に表示されてしまっている
-set laststatus=0
+"set laststatus=0
 "ポップアップの透明度
 set winblend=40
 set pumblend=30
