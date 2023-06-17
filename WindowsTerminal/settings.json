@@ -210,13 +210,6 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "commandline": "wsl.exe ~ -d ubuntu -u dun",
-                "guid": "{85b510f5-8162-445a-83cf-e7613dcd41c3}",
-                "hidden": false,
-                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
-                "name": "ubuntu"
             }
         ]
     },
