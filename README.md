@@ -46,9 +46,19 @@ cd settings/setup
 
 #### ShellScriptを実行する。
 
-##### すべての設定をセットアップする場合
+##### セットアップが可能な設定の一覧を表示する
 ```
-sh linux.sh
+$sh linux.sh
+
+// output
+sh linux.sh all (not recommend)
+sh linux.sh bash
+sh linux.sh emacs
+sh linux.sh neovim
+sh linux.sh neovim_latest   (v0.8.0)
+sh linux.sh vim
+sh linux.sh starship
+
 ```
 
 ##### 特定の設定をセットアップする場合
@@ -57,7 +67,7 @@ sh linux.sh
 
 (複数の名前を引数に入れた場合は対応していません。)
 ```
-sh linux.sh <vim/neovim/emacs/linux/starship>
+$sh linux.sh <vim/neovim/emacs/linux/starship>
 
 ex) sh linux.sh vim
 ex) sh linux.sh starship
