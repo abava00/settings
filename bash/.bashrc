@@ -14,3 +14,6 @@ HISTTIMEFORMAT='%F %T '
 # ruby install dir
 export GEM_HOME=~/.config/ruby
 export PATH=$PATH:~/.config/ruby/bin
+
+# do not exit with <c-d>
+set -o ignoreeof -f
