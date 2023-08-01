@@ -41,7 +41,7 @@ neovim_latest () {
   echo "#alias view=\"vim -R\"" >> ~/.bashrc
   ## donwload from github
   cd /tmp/
-  wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz
+  wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
   tar -vxzf nvim-linux64.tar.gz
   cd nvim-linux64
   ## put nvims lib and share file
